@@ -26,7 +26,7 @@ pip install -r requirements.txt
 
 Assembling tables and re-scoring pickles runs on CPU but needs **PyTorch Geometric** (many pickles store `torch_geometric.data.Data`). `run` needs an API key.
 
-Recommended Python: a conda env with PyG (the author env is `gnn-llm`).
+Use a conda/venv with **PyTorch Geometric**.
 
 ## Data
 

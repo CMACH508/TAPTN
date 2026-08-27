@@ -103,39 +103,38 @@ ogbn-products 全图（含 `Amazon-3M.raw`，约 7 GB）**未打包**。三张 p
 
 ## 环境
 
-拼表与 pickle / `.pred` 重算需要 **PyTorch Geometric**（不少 pickle 含 `torch_geometric.data.Data`）。作者环境：
+拼表与 pickle / `.pred` 重算需要 **PyTorch Geometric**（不少 pickle 含 `torch_geometric.data.Data`）。`PATH` 上任意带 PyG 的 Python 即可：
 
 ```bash
-/home/wanghongyi/.conda/envs/gnn-llm/bin/python
+python -c "import torch_geometric"
 ```
 
 各包 `requirements.txt` 略有不同：重连/ICL 需要 `openai`；微调还需要 `transformers`、`dgl`、`ogb`。实时 LLM 调用需要 `OPENAI_API_KEY` 或 `TAPTN_LLM_API_KEY`（可选 `OPENAI_BASE_URL`）。微调 `train` 需要 GPU。
 
 ## 一键干运行（不调用 LLM、不训练）
 
-在本目录：
+在本目录（`PATH` 上的 `python` 需带 PyG）：
 
 ```bash
-export PYTHON=/home/wanghongyi/.conda/envs/gnn-llm/bin/python   # 若默认 python 无 PyG
 bash run_all_dry.sh
 ```
+
+若当前 `python` 不是带 PyG 的解释器，先设置 `PYTHON`（激活环境后可用 `export PYTHON=$(which python)`）。
 
 或逐包（每个包用**自己的**资源目录）：
 
 ```bash
-export PYTHON=/home/wanghongyi/.conda/envs/gnn-llm/bin/python
-
 export TAPTN_ASSETS="$PWD/TAPTN_rewiring_repro_assets"
-"$PYTHON" TAPTN_rewiring_repro/reproduce.py check
-"$PYTHON" TAPTN_rewiring_repro/reproduce.py dry --table all --rescore --figures
+python TAPTN_rewiring_repro/reproduce.py check
+python TAPTN_rewiring_repro/reproduce.py dry --table all --rescore --figures
 
 export TAPTN_ASSETS="$PWD/TAPTN_icl_repro_assets"
-"$PYTHON" TAPTN_icl_repro/reproduce.py check
-"$PYTHON" TAPTN_icl_repro/reproduce.py dry --table all --rescore --figures
+python TAPTN_icl_repro/reproduce.py check
+python TAPTN_icl_repro/reproduce.py dry --table all --rescore --figures
 
 export TAPTN_ASSETS="$PWD/TAPTN_finetune_repro_assets"
-"$PYTHON" TAPTN_finetune_repro/reproduce.py check
-"$PYTHON" TAPTN_finetune_repro/reproduce.py dry --table all --rescore-lm
+python TAPTN_finetune_repro/reproduce.py check
+python TAPTN_finetune_repro/reproduce.py dry --table all --rescore-lm
 ```
 
 ## 计分（不要混用）

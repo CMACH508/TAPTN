@@ -23,13 +23,13 @@ Main-table WebKB / citation-graph TAPTN numbers come from the **old** `texas2_` 
 
 ## Cannot reproduce (missing artifacts)
 
-Searched home `/home/wanghongyi/LLM-Structured-Data-main`, data1 `LLM-Structured-Data-main`, and `TAPE-main`. The following paper cells have **no matching pickle**. `generate_tables.py` hardcodes several of them.
+The following paper cells have **no matching pickle** in the shipped assets (they were also absent from the author working copies used to assemble this package). `generate_tables.py` hardcodes several of them.
 
 ### Cora GPT-3.5 (citation-graph backbone)
 
 | Cell | Paper | Note |
 |---|---:|---|
-| Table 8 / Table 18 / Table 19 0-hop | 59.40 | DATA1 ego runs are 63.65 and 52.40 — neither matches. |
+| Table 8 / Table 18 / Table 19 0-hop | 59.40 | Author working-copy ego runs are 63.65 and 52.40 — neither matches. |
 | GraphICL+SAT 1-hop | 62.55 | Hardcoded. `cora_hop2_anon_noguide_gpt-3.5-turbo-0125.pkl` is **62.55** but is the decouple 2-hop *anonymized* cell, not SAT 1-hop. |
 | GraphICL+SAT 2-hop | 63.47 | `main.py` comment: “original setting … 63.47% if abstracts are not used”. File not found. |
 | TAPTN 1-hop | 72.69 | Hardcoded. A Llama-3.3 file happens to be 72.69; wrong backbone. |
@@ -56,7 +56,7 @@ These missing keys reappear in Table 9 (Cora GraphICL 2-hop), Table 19 (Cora w/ 
 - **Table 15** all six numbers. TAPTN 1-hop w/ and w/o instructions share `amazon_hop1_guide_12.pkl` (74.75). TAPTN 2-hop w/ instr. is `amazon_hop1_guide24.pkl` (76.75) — **not** the dense GraphICL JSON, which is also 76.75 by coincidence
 - **Table 18** entire arXiv-2023 column; Cora TAPTN 2-hop
 - **Table 19** all anonymized columns; all WebKB/arXiv “w/ Struct” cells that reuse the main-table old files; hop-2 +instructions
-- **Table 27** all 16 cells. Qwen TAPTN 1-hop 94.92 is the **pre-keyshift** snapshot (`*.pkl.keyshift_bak` in the home repo); the later file there is 96.09
+- **Table 27** all 16 cells. Qwen TAPTN 1-hop 94.92 is the **pre-keyshift** snapshot (`*.pkl.keyshift_bak` kept beside the later pickle); the later file is 96.09
 - **Table 28** all 12 accuracy cells. Texas TAPTN uses `iter2_2hop` / `iter2_v2_2hop` (not the un-suffixed `iter2` that still has the key-shift bug). Displayed Δ can differ by 0.01 from the PDF because the PDF rounds the subtraction of already-rounded percents (Gemma +1.56 vs +1.57, GLM +1.95 vs +1.96, Qwen Cora +1.11 vs +1.10)
 
 ## Static figures

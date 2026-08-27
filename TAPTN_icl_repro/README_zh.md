@@ -26,7 +26,7 @@ pip install -r requirements.txt
 
 拼表与从 pickle 重算准确率只需 CPU，但需要安装 **PyTorch Geometric**（不少 pickle 内含 `torch_geometric.data.Data`）。`run` 实时推理需要 OpenAI 兼容 API。
 
-建议使用带 PyG 的 conda 环境（作者环境：`gnn-llm`）。
+建议使用带 **PyTorch Geometric** 的 conda/venv。
 
 ## 数据
 

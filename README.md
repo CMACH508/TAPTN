@@ -101,39 +101,38 @@ Each cell is five runs (run 1–5), mean±std. **P5** in Table 12 is a *column* 
 
 ## Environment
 
-Assembling tables and re-scoring pickles / `.pred` files needs **PyTorch Geometric** (many pickles store `torch_geometric.data.Data`). Author env:
+Assembling tables and re-scoring pickles / `.pred` files needs **PyTorch Geometric** (many pickles store `torch_geometric.data.Data`). Any Python with PyG on `PATH` is enough:
 
 ```bash
-/home/wanghongyi/.conda/envs/gnn-llm/bin/python
+python -c "import torch_geometric"
 ```
 
 `requirements.txt` differs slightly: rewiring/ICL need `openai`; fine-tuning also needs `transformers`, `dgl`, and `ogb`. Live LLM calls need `OPENAI_API_KEY` or `TAPTN_LLM_API_KEY` (optional `OPENAI_BASE_URL`). Fine-tune `train` needs a GPU.
 
 ## Dry-run everything (no LLM, no training)
 
-From this directory:
+From this directory (with a PyG-capable `python` on `PATH`):
 
 ```bash
-export PYTHON=/home/wanghongyi/.conda/envs/gnn-llm/bin/python   # if default python lacks PyG
 bash run_all_dry.sh
 ```
+
+If `python` is not that interpreter, set `PYTHON` first (`export PYTHON=$(which python)` after activating your env).
 
 Or package by package (each with **its own** asset directory):
 
 ```bash
-export PYTHON=/home/wanghongyi/.conda/envs/gnn-llm/bin/python
-
 export TAPTN_ASSETS="$PWD/TAPTN_rewiring_repro_assets"
-"$PYTHON" TAPTN_rewiring_repro/reproduce.py check
-"$PYTHON" TAPTN_rewiring_repro/reproduce.py dry --table all --rescore --figures
+python TAPTN_rewiring_repro/reproduce.py check
+python TAPTN_rewiring_repro/reproduce.py dry --table all --rescore --figures
 
 export TAPTN_ASSETS="$PWD/TAPTN_icl_repro_assets"
-"$PYTHON" TAPTN_icl_repro/reproduce.py check
-"$PYTHON" TAPTN_icl_repro/reproduce.py dry --table all --rescore --figures
+python TAPTN_icl_repro/reproduce.py check
+python TAPTN_icl_repro/reproduce.py dry --table all --rescore --figures
 
 export TAPTN_ASSETS="$PWD/TAPTN_finetune_repro_assets"
-"$PYTHON" TAPTN_finetune_repro/reproduce.py check
-"$PYTHON" TAPTN_finetune_repro/reproduce.py dry --table all --rescore-lm
+python TAPTN_finetune_repro/reproduce.py check
+python TAPTN_finetune_repro/reproduce.py dry --table all --rescore-lm
 ```
 
 ## Scoring (do not mix)
