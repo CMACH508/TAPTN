@@ -10,11 +10,11 @@
 
 This directory groups the TMLR 2026 camera-ready **experimental tables** into three packages. Code and assets are separate: each package has a sibling `*_repro_assets/` bundle. API keys are read from the environment only and are not stored in vendor code.
 
-| Package | Paper chapter | Dry-run | Code | Assets (approx.) |
-|---|---|---|---|---:|
-| [TAPTN_rewiring_repro](TAPTN_rewiring_repro/README.md) | Section 2 neighborhood rewiring + Appendices G–H (label-free, current models, TAPTN-internal structural channel) | rescore pickles; redraw scatter/heatmaps | ~6 MB | 1.4 GB |
-| [TAPTN_icl_repro](TAPTN_icl_repro/README.md) | Section 3 TAPTN / GraphICL zero-shot ICL | rescore pickles; copy method figures | ~0.8 MB | 2.5 GB |
-| [TAPTN_finetune_repro](TAPTN_finetune_repro/README.md) | Section 4 TAPTN+LM vs GNN | reprint recorded cells; rescore LM `.pred` | ~1 MB | 92 GB |
+| Package | Paper chapter | Dry-run | Code | Assets (approx.) | Download |
+|---|---|---|---|---:|---|
+| [TAPTN_rewiring_repro](TAPTN_rewiring_repro/README.md) | Section 2 neighborhood rewiring + Appendices G–H (label-free, current models, TAPTN-internal structural channel) | rescore pickles; redraw scatter/heatmaps | ~6 MB | 1.4 GB | [Google Drive](https://drive.google.com/drive/folders/1qQeo2Fy8_snk08b3jWFYgBmKyme_65oj?usp=sharing) |
+| [TAPTN_icl_repro](TAPTN_icl_repro/README.md) | Section 3 TAPTN / GraphICL zero-shot ICL | rescore pickles; copy method figures | ~0.8 MB | 2.5 GB | [Google Drive](https://drive.google.com/drive/folders/1WGKDbH9sueIQat-UUJH7ZUlgdSwpJeu-?usp=sharing) |
+| [TAPTN_finetune_repro](TAPTN_finetune_repro/README.md) | Section 4 TAPTN+LM vs GNN | reprint recorded cells; rescore LM `.pred` | ~1 MB | 92 GB | [Google Drive](https://drive.google.com/drive/folders/1wIlc-r7HFd31YhQLGjc0uY0-Xy3qfUVZ?usp=sharing) |
 
 Do not point all three `TAPTN_ASSETS` variables at the same folder. Do not mix scoring protocols.
 

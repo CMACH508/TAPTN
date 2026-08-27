@@ -23,11 +23,7 @@ pip install -r requirements.txt
 
 ## 数据
 
-pickle、WebKB 网页、摘要、原始 CSV 和相机就绪图**不在**代码仓库里。请解压资源包并把路径指向该目录：
-
-```
-https://PLACEHOLDER.example/TAPTN_rewiring_repro_assets
-```
+pickle、WebKB 网页、摘要、原始 CSV 和相机就绪图**不在**代码仓库里。请从 [Google Drive](https://drive.google.com/drive/folders/1qQeo2Fy8_snk08b3jWFYgBmKyme_65oj?usp=sharing) 下载资源包并解压，再把路径指向该目录。
 
 推荐目录布局（在论文总目录内）：
 

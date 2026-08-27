@@ -10,11 +10,11 @@ English: [README.md](README.md).
 
 本目录把 TMLR 2026 相机就绪稿的**实验表格**拆成三个互不混用的复现包。代码与资源分离：每个包旁边有独立的 `*_repro_assets/`。密钥只从环境变量读取，不写进 vendor。
 
-| 包 | 论文章节 | 干运行做什么 | 代码 | 资源（约） |
-|---|---|---|---|---:|
-| [TAPTN_rewiring_repro](TAPTN_rewiring_repro/README_zh.md) | 第 2 节邻域重连 + 附录 G–H（无标签、新生代、TAPTN 内部结构通道） | pickle 重算准确率；重绘散点/热力图 | ~6 MB | 1.4 GB |
-| [TAPTN_icl_repro](TAPTN_icl_repro/README_zh.md) | 第 3 节 TAPTN / GraphICL 零样本 ICL | pickle 重算；拷贝方法示意图 | ~0.8 MB | 2.5 GB |
-| [TAPTN_finetune_repro](TAPTN_finetune_repro/README_zh.md) | 第 4 节 TAPTN+LM vs GNN | 记录格子拼表；LM `.pred` 重算 | ~1 MB | 92 GB |
+| 包 | 论文章节 | 干运行做什么 | 代码 | 资源（约） | 下载 |
+|---|---|---|---|---:|---|
+| [TAPTN_rewiring_repro](TAPTN_rewiring_repro/README_zh.md) | 第 2 节邻域重连 + 附录 G–H（无标签、新生代、TAPTN 内部结构通道） | pickle 重算准确率；重绘散点/热力图 | ~6 MB | 1.4 GB | [Google Drive](https://drive.google.com/drive/folders/1qQeo2Fy8_snk08b3jWFYgBmKyme_65oj?usp=sharing) |
+| [TAPTN_icl_repro](TAPTN_icl_repro/README_zh.md) | 第 3 节 TAPTN / GraphICL 零样本 ICL | pickle 重算；拷贝方法示意图 | ~0.8 MB | 2.5 GB | [Google Drive](https://drive.google.com/drive/folders/1WGKDbH9sueIQat-UUJH7ZUlgdSwpJeu-?usp=sharing) |
+| [TAPTN_finetune_repro](TAPTN_finetune_repro/README_zh.md) | 第 4 节 TAPTN+LM vs GNN | 记录格子拼表；LM `.pred` 重算 | ~1 MB | 92 GB | [Google Drive](https://drive.google.com/drive/folders/1wIlc-r7HFd31YhQLGjc0uY0-Xy3qfUVZ?usp=sharing) |
 
 不要把三个 `TAPTN_ASSETS` 指到同一个目录，也不要混用计分协议。
 

@@ -30,11 +30,7 @@ pip install -r requirements.txt
 
 ## 数据
 
-pickle、WebKB 网页、Cora / arXiv-2023 图、成本探测 JSON 和相机就绪图**不在**代码仓库里。请解压资源包并把路径指向该目录：
-
-```
-https://PLACEHOLDER.example/TAPTN_icl_repro_assets
-```
+pickle、WebKB 网页、Cora / arXiv-2023 图、成本探测 JSON 和相机就绪图**不在**代码仓库里。请从 [Google Drive](https://drive.google.com/drive/folders/1WGKDbH9sueIQat-UUJH7ZUlgdSwpJeu-?usp=sharing) 下载资源包并解压，再把路径指向该目录。
 
 推荐目录布局（在论文总目录内）：
 

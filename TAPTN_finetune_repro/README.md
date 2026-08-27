@@ -23,11 +23,7 @@ Assembling tables and re-scoring LM predictions runs on CPU. `train` needs a GPU
 
 ## Data
 
-Datasets, TAPTN/GraphICL texts, pretrained encoders, and LM checkpoints are **not** in this repository. Download the asset bundle, unpack it, and point the code at that folder:
-
-```
-https://PLACEHOLDER.example/TAPTN_finetune_repro_assets
-```
+Datasets, TAPTN/GraphICL texts, pretrained encoders, and LM checkpoints are **not** in this repository. Download the asset bundle from [Google Drive](https://drive.google.com/drive/folders/1wIlc-r7HFd31YhQLGjc0uY0-Xy3qfUVZ?usp=sharing), unpack it, and point the code at that folder.
 
 Recommended layout (inside the paper hub):
 

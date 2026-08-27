@@ -30,11 +30,7 @@ Recommended Python: a conda env with PyG (the author env is `gnn-llm`).
 
 ## Data
 
-Pickles, WebKB HTML, Cora / arXiv-2023 graphs, cost-probe JSON, and camera-ready figures are **not** in the code repository. Download the asset bundle, unpack it, and point the code at that folder:
-
-```
-https://PLACEHOLDER.example/TAPTN_icl_repro_assets
-```
+Pickles, WebKB HTML, Cora / arXiv-2023 graphs, cost-probe JSON, and camera-ready figures are **not** in the code repository. Download the asset bundle from [Google Drive](https://drive.google.com/drive/folders/1WGKDbH9sueIQat-UUJH7ZUlgdSwpJeu-?usp=sharing), unpack it, and point the code at that folder.
 
 Recommended layout (inside the paper hub):
 

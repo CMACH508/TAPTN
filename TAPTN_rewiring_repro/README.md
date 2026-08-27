@@ -23,11 +23,7 @@ Assembling tables and re-scoring pickles runs on CPU but needs **PyTorch Geometr
 
 ## Data
 
-Pickles, WebKB HTML, abstracts, recorded CSVs, and camera-ready figures are **not** in the code repository. Download the asset bundle, unpack it, and point the code at that folder:
-
-```
-https://PLACEHOLDER.example/TAPTN_rewiring_repro_assets
-```
+Pickles, WebKB HTML, abstracts, recorded CSVs, and camera-ready figures are **not** in the code repository. Download the asset bundle from [Google Drive](https://drive.google.com/drive/folders/1qQeo2Fy8_snk08b3jWFYgBmKyme_65oj?usp=sharing), unpack it, and point the code at that folder.
 
 Recommended layout (inside the paper hub):
 

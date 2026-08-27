@@ -23,11 +23,7 @@ pip install -r requirements.txt
 
 ## 数据
 
-数据集、TAPTN/GraphICL 文本、预训练编码器与 LM 权重**不在本仓库内**。请下载资源包并解压，再让代码指向该目录：
-
-```
-https://PLACEHOLDER.example/TAPTN_finetune_repro_assets
-```
+数据集、TAPTN/GraphICL 文本、预训练编码器与 LM 权重**不在本仓库内**。请从 [Google Drive](https://drive.google.com/drive/folders/1wIlc-r7HFd31YhQLGjc0uY0-Xy3qfUVZ?usp=sharing) 下载资源包并解压，再让代码指向该目录。
 
 推荐布局（在论文总目录内）：
 
