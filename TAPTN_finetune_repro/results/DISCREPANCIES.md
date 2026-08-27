@@ -93,9 +93,9 @@ All RoBERTa table cells agree with the paper within 0.06 pp.
 
 ### Headline count tables
 
-- **Transferability** (`p5_transfer`) and **encoder** (`crosslm_encoder`) counts from recorded cells match the paper exactly (Σ 23 / 5; DeBERTa 1/0/0/0/0/0 and RoBERTa 0/0/0/0/0/8).
-- **tab:gnn_summary** significance counts match the paper (Cora 2, Wisconsin 1, others 0). Cora **#mean >TAPTN+LM** is 10 from recorded cells vs 9 in the paper, because recorded TAPTN+LM on Cora is 84.03 vs typeset 84.32, so one extra competitor has a higher mean.
-- **tab:roberta_full** and **tab:heterophilic_full** recorded mean±std match the paper (within 0.06 pp).
+- **Transferability** (Table 12) and **encoder** (Table 13) counts from recorded cells match the paper exactly (Σ 23 / 5; DeBERTa 1/0/0/0/0/0 and RoBERTa 0/0/0/0/0/8).
+- **Table 11** significance counts match the paper (Cora 2, Wisconsin 1, others 0). Cora **#mean >TAPTN+LM** is 10 from recorded cells vs 9 in the paper, because recorded TAPTN+LM on Cora is 84.03 vs typeset 84.32, so one extra competitor has a higher mean.
+- **Table 23** and **Table 21** recorded mean±std match the paper (within 0.06 pp).
 
 ### Notable gaps
 

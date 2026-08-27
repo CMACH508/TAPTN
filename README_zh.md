@@ -12,9 +12,9 @@ English: [README.md](README.md).
 
 | 包 | 论文章节 | 干运行做什么 | 代码 | 资源（约） |
 |---|---|---|---|---:|
-| [TAPTN_rewiring_repro](TAPTN_rewiring_repro/README_zh.md) | §2 邻域重连 + 附录无标签新生代 + TAPTN 内部结构通道 | pickle 重算准确率；重绘散点/热力图 | ~6 MB | 1.4 GB |
-| [TAPTN_icl_repro](TAPTN_icl_repro/README_zh.md) | TAPTN / GraphICL 零样本 ICL | pickle 重算；拷贝方法示意图 | ~0.8 MB | 2.5 GB |
-| [TAPTN_finetune_repro](TAPTN_finetune_repro/README_zh.md) | TAPTN+LM vs GNN | 记录格子拼表；LM `.pred` 重算 | ~1 MB | 92 GB |
+| [TAPTN_rewiring_repro](TAPTN_rewiring_repro/README_zh.md) | 第 2 节邻域重连 + 附录 G–H（无标签、新生代、TAPTN 内部结构通道） | pickle 重算准确率；重绘散点/热力图 | ~6 MB | 1.4 GB |
+| [TAPTN_icl_repro](TAPTN_icl_repro/README_zh.md) | 第 3 节 TAPTN / GraphICL 零样本 ICL | pickle 重算；拷贝方法示意图 | ~0.8 MB | 2.5 GB |
+| [TAPTN_finetune_repro](TAPTN_finetune_repro/README_zh.md) | 第 4 节 TAPTN+LM vs GNN | 记录格子拼表；LM `.pred` 重算 | ~1 MB | 92 GB |
 
 不要把三个 `TAPTN_ASSETS` 指到同一个目录，也不要混用计分协议。
 
@@ -25,7 +25,7 @@ TAPTN_paper_repro/                 # 本目录（总览）
   README.md
   README_zh.md
   run_all_dry.sh
-  TAPTN_rewiring_repro/            # §2 代码
+  TAPTN_rewiring_repro/            # 第 2 节代码
   TAPTN_rewiring_repro_assets/
   TAPTN_icl_repro/                 # ICL 代码
   TAPTN_icl_repro_assets/
@@ -37,69 +37,69 @@ TAPTN_paper_repro/                 # 本目录（总览）
 
 ## 论文表格 → 包
 
-`--table` 与相机就绪稿 `\label{...}` 一致（ICL 包可省略 `tab:` 前缀）。
+PDF 编号与 TMLR 2026 相机就绪稿一致。`--table` 是命令行参数（沿用历史 TeX label 的短别名；ICL 包也可加 `tab:` 前缀）。
 
-### 第 2 节与附录：重连（`TAPTN_rewiring_repro`）
+### 第 2 节与附录 G–H：重连（`TAPTN_rewiring_repro`）
 
-| 论文 label | `--table` | 内容 |
+| PDF | `--table` | 内容 |
 |---|---|---|
-| `tb_1` | `tb_1` | WebKB / 引文图同质性（引文图三格为论文记录值，图未随包） |
-| `tb_2` | `tb_2` | 7 模型 × 4 WebKB × 翻转 / 极端 |
-| `tb_3` | `tb_3` | GPT-3.5 + 逐步指令，仅翻转（Cornell / Texas 有 pickle；Washington / Wisconsin 无） |
-| `tab:rewiring_stats` | `rewiring_stats` | 能力–敏感性回归 |
-| `tab:nolabel_main` | `nolabel_main` | 无标签翻转，7 模型平均 |
-| `tab:nolabel_stats` | `nolabel_stats` | 无标签能力–敏感性 |
-| `tab:current_rewire` | `current_rewire` | 四个新生代模型的无标签翻转 |
-| `tab:taptn_structcorrupt` | `taptn_structcorrupt` | TAPTN 内部去边 / 翻转 Δ（仅干运行） |
+| 表 1 | `tb_1` | WebKB / 引文图同质性（引文图三格为论文记录值，图未随包） |
+| 表 2 | `tb_2` | 7 模型 × 4 WebKB × 翻转 / 极端 |
+| 表 3 | `tb_3` | GPT-3.5 + 逐步指令，仅翻转（Cornell / Texas 有 pickle；Washington / Wisconsin 无） |
+| 表 4 | `rewiring_stats` | 能力–敏感性回归 |
+| 表 5 | `nolabel_main` | 无标签翻转，7 模型平均 |
+| 表 6 | `nolabel_stats` | 无标签能力–敏感性 |
+| 表 26 | `current_rewire` | 四个新生代模型的无标签翻转 |
+| 表 29 | `taptn_structcorrupt` | TAPTN 内部去边 / 翻转 Δ（仅干运行） |
 
-配图：`fig:hop1`、`fig:hop2`、附录 `fig:nolabel_*` 由 pickle 重绘；`fig_1`、`fig:case` 为相机就绪示意图拷贝。
+配图：图 2、图 3、附录图 8–10 由 pickle 重绘；图 1、图 4 为相机就绪示意图拷贝。
 
 重连表已相对未修订 PDF 做过勘误。对照旧数字：`python reproduce.py dry --table all --rescore --paper-compat`。
 
-### TAPTN 方法章：零样本 ICL（`TAPTN_icl_repro`）
+### 第 3 节：零样本 ICL（`TAPTN_icl_repro`）
 
-| 论文 label | `--table` | 内容 |
+| PDF | `--table` | 内容 |
 |---|---|---|
-| `tab:main_5_datasets` | `main_5_datasets` | 0-hop / GraphICL+SAT / TAPTN，五数据集 |
-| `tab:factorial` | `factorial` | 2-hop SAT × 指令 × 聚合 |
-| `tab:product_70b` | `product_70b` | ogbn-products，400 节点，Llama-3.3-70B |
-| `tab:cost` | `cost` | token / OpenRouter 费用 / 准确率 |
-| `tb_52` | `tb_52` | 预算骨干（8B 首轮 + 70B 精炼） |
-| `tb_4` | `tb_4` | GraphICL 自反思 vs TAPTN |
-| `tab:decouple` | `decouple` | SAT × 指令，无聚合 |
-| `tab:current_channel` | `current_channel` | Texas 结构通道，四模型 |
-| `tab:current_taptn` | `current_taptn` | 2-hop TAPTN vs GraphICL+SAT（Texas + Cora） |
+| 表 8 | `main_5_datasets` | 0-hop / GraphICL+SAT / TAPTN，五数据集 |
+| 表 9 | `factorial` | 2-hop SAT × 指令 × 聚合 |
+| 表 10 | `product_70b` | ogbn-products，400 节点，Llama-3.3-70B |
+| 表 14 | `cost` | token / OpenRouter 费用 / 准确率 |
+| 表 15 | `tb_52` | 预算骨干（8B 首轮 + 70B 精炼） |
+| 表 18 | `tb_4` | GraphICL 自反思 vs TAPTN |
+| 表 19 | `decouple` | SAT × 指令，无聚合 |
+| 表 27 | `current_channel` | Texas 结构通道，四模型 |
+| 表 28 | `current_taptn` | 2-hop TAPTN vs GraphICL+SAT（Texas + Cora） |
 
-示意图：`fig:taptn_overview`（`TAPTN_overview.pdf`）、`fig_2`（`TAPTN_mp.pdf`）。Cora 2-hop TAPTN 的门控：`python reproduce.py gate`（不调 LLM）。
+示意图：图 5（`TAPTN_overview.pdf`）、图 6（`TAPTN_mp.pdf`）。Cora 2-hop TAPTN 的门控：`python reproduce.py gate`（不调 LLM）。
 
 ogbn-products 全图（含 `Amazon-3M.raw`，约 7 GB）**未打包**。三张 products 表的干运行只用随包 pickle 与 `cost_probe/` JSON。
 
-### 微调 vs GNN（`TAPTN_finetune_repro`）
+### 第 4 节：微调 vs GNN（`TAPTN_finetune_repro`）
 
-| 论文 label | `--table` | 内容 |
+| PDF | `--table` | 内容 |
 |---|---|---|
-| `tab:gnn_summary` | `gnn_summary` | 显著超过 TAPTN+LM 的流水线数量 |
-| `tab:p5_transfer` | `p5_transfer` / `transfer` | TAPTN 嵌入 + 冻结 GNN（可迁移性计数） |
-| `tab:crosslm_encoder` | `crosslm_encoder` | DeBERTa vs RoBERTa |
-| `tb_6` | `tb_6` | 冻结 TA+GNN、GraphICL+LM、TAPTN+LM（同配图） |
-| `tab:heterophilic_full` | `heterophilic` | 冻结 TA+GNN、TAPTN+LM（WebKB） |
-| `tab:joint_gnn` | `joint` | 编码器与 GNN 联合训练 |
-| `tab:roberta_full` | `roberta` | RoBERTa-base 编码器 |
+| 表 11 | `gnn_summary` | 显著超过 TAPTN+LM 的流水线数量 |
+| 表 12 | `p5_transfer` / `transfer` | TAPTN 嵌入 + 冻结 GNN（可迁移性计数） |
+| 表 13 | `crosslm_encoder` | DeBERTa vs RoBERTa |
+| 表 20 | `tb_6` | 冻结 TA+GNN、GraphICL+LM、TAPTN+LM（同配图） |
+| 表 21 | `heterophilic` | 冻结 TA+GNN、TAPTN+LM（WebKB） |
+| 表 22 | `joint` | 编码器与 GNN 联合训练 |
+| 表 23 | `roberta` | RoBERTa-base 编码器 |
 
-每个格子为 5 次运行（run 1–5），mean±std。`tab:p5_transfer` 的 **P5** 是该表列缩写，不是主对照表行名。
+每个格子为 5 次运行（run 1–5），mean±std。表 12 的 **P5** 是该表列缩写，不是主对照表行名。
 
 ### 不在三个实验包里干运行的论文对象
 
 这些是正文/附录里的说明或超参表，不是 pickle 格子：
 
-| label | 说明 |
+| PDF | 说明 |
 |---|---|
-| `tab:notation` | TAPTN 符号表 |
-| `alg:taptn` | 伪代码，在 tex 中 |
-| `tb_10a` | 数据集规模与划分（描述性） |
-| `tb_7a` / `tb_8a` | GNN 结构与训练超参 |
-| `tb_worked_nbr` | 附录 worked example 的邻域摘要 |
-| `fig_3a` | `GNNPipe.pdf` 流水线示意图（未随微调资源包） |
+| 表 7 | TAPTN 符号表 |
+| 算法 1 | 论文中的伪代码 |
+| 表 16 | 数据集规模与划分（描述性） |
+| 表 24 / 25 | GNN 结构与训练超参 |
+| 表 17 | 附录 worked example 的邻域摘要 |
+| 图 7 | `GNNPipe.pdf` 流水线示意图（未随微调资源包） |
 
 ## 环境
 
@@ -149,7 +149,7 @@ export TAPTN_ASSETS="$PWD/TAPTN_finetune_repro_assets"
 
 ## 实时重跑
 
-命令与限制见各包 README。`tab:taptn_structcorrupt` 仅干运行。products 实时重跑需自行安装 OGB 官方数据。
+命令与限制见各包 README。表 29 仅干运行。products 实时重跑需自行安装 OGB 官方数据。
 
 ## 引用
 

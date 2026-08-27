@@ -78,24 +78,24 @@ lines.append("")
 
 # Group cells by paper table
 SECTIONS = [
-    ("Table tb_6 — Frozen TA+GNN / GraphICL+LM / TAPTN+LM (homophilic, DeBERTa)",
+    ("Table 20 — Frozen TA+GNN / GraphICL+LM / TAPTN+LM (homophilic, DeBERTa)",
      lambda c: c["encoder"] == "deberta" and c["pipeline"] in ("P1_LM", "P1_GNN", "P3", "P2")
      and c["dataset"] in ("cora", "arxiv_2023", "product")
      and not (c["pipeline"] == "P2" and False)),
-    ("Table heterophilic — Frozen TA+GNN / TAPTN+LM (WebKB, DeBERTa; no GraphICL+LM)",
+    ("Table 21 — Frozen TA+GNN / TAPTN+LM (WebKB, DeBERTa; no GraphICL+LM)",
      lambda c: c["encoder"] == "deberta" and c["pipeline"] in ("P1_LM", "P1_GNN", "P2")
      and c["dataset"] in ("texas", "wisconsin", "cornell")),
-    ("Table joint — Jointly trained encoder+GNN (DeBERTa)",
+    ("Table 22 — Jointly trained encoder+GNN (DeBERTa)",
      lambda c: c["encoder"] == "deberta" and c["pipeline"] == "P4"),
-    ("Table roberta — RoBERTa-base TA+LM / TA+GNN / TAPTN+LM",
+    ("Table 23 — RoBERTa-base TA+LM / TA+GNN / TAPTN+LM",
      lambda c: c["encoder"] == "roberta"),
-    ("Transferability — TAPTN embeddings + frozen GNN (DeBERTa)",
+    ("Table 12 — TAPTN embeddings + frozen GNN (DeBERTa)",
      lambda c: c["encoder"] == "deberta" and c["pipeline"] == "P5"),
 ]
 
-# Avoid printing TAPTN+LM twice in tb_6 vs heterophilic — the filters already split by dataset.
+# Avoid printing TAPTN+LM twice in Table 20 vs Table 21 — the filters already split by dataset.
 # Joint TAPTN is P2, not included in joint filter. Good.
-# tb_6 filter includes P2 on homophilic — TAPTN appears in tb_6. Heterophilic filter includes P2 on webkb.
+# Table 20 filter includes P2 on homophilic — TAPTN appears in Table 20. Table 21 filter includes P2 on webkb.
 
 seen = set()
 for title, pred in SECTIONS:
@@ -220,9 +220,9 @@ dlines.append(f"- RoBERTa cells with a larger gap: **{rb_n}**")
 dlines.append("")
 dlines.append("### Headline count tables")
 dlines.append("")
-dlines.append("- **Transferability** (`p5_transfer`) and **encoder** (`crosslm_encoder`) counts from recorded cells match the paper exactly (Σ 23 / 5; DeBERTa 1/0/0/0/0/0 and RoBERTa 0/0/0/0/0/8).")
-dlines.append("- **tab:gnn_summary** significance counts match the paper (Cora 2, Wisconsin 1, others 0). Cora **#mean >TAPTN+LM** is 10 from recorded cells vs 9 in the paper, because recorded TAPTN+LM on Cora is 84.03 vs typeset 84.32, so one extra competitor has a higher mean.")
-dlines.append("- **tab:roberta_full** and **tab:heterophilic_full** recorded mean±std match the paper (within 0.06 pp).")
+dlines.append("- **Transferability** (Table 12) and **encoder** (Table 13) counts from recorded cells match the paper exactly (Σ 23 / 5; DeBERTa 1/0/0/0/0/0 and RoBERTa 0/0/0/0/0/8).")
+dlines.append("- **Table 11** significance counts match the paper (Cora 2, Wisconsin 1, others 0). Cora **#mean >TAPTN+LM** is 10 from recorded cells vs 9 in the paper, because recorded TAPTN+LM on Cora is 84.03 vs typeset 84.32, so one extra competitor has a higher mean.")
+dlines.append("- **Table 23** and **Table 21** recorded mean±std match the paper (within 0.06 pp).")
 dlines.append("")
 dlines.append("### Notable gaps")
 dlines.append("")

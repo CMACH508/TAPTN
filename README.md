@@ -12,9 +12,9 @@ This directory groups the TMLR 2026 camera-ready **experimental tables** into th
 
 | Package | Paper chapter | Dry-run | Code | Assets (approx.) |
 |---|---|---|---|---:|
-| [TAPTN_rewiring_repro](TAPTN_rewiring_repro/README.md) | §2 neighborhood rewiring + appendix label-free current models + TAPTN-internal structural channel | rescore pickles; redraw scatter/heatmaps | ~6 MB | 1.4 GB |
-| [TAPTN_icl_repro](TAPTN_icl_repro/README.md) | TAPTN / GraphICL zero-shot ICL | rescore pickles; copy method figures | ~0.8 MB | 2.5 GB |
-| [TAPTN_finetune_repro](TAPTN_finetune_repro/README.md) | TAPTN+LM vs GNN | reprint recorded cells; rescore LM `.pred` | ~1 MB | 92 GB |
+| [TAPTN_rewiring_repro](TAPTN_rewiring_repro/README.md) | Section 2 neighborhood rewiring + Appendices G–H (label-free, current models, TAPTN-internal structural channel) | rescore pickles; redraw scatter/heatmaps | ~6 MB | 1.4 GB |
+| [TAPTN_icl_repro](TAPTN_icl_repro/README.md) | Section 3 TAPTN / GraphICL zero-shot ICL | rescore pickles; copy method figures | ~0.8 MB | 2.5 GB |
+| [TAPTN_finetune_repro](TAPTN_finetune_repro/README.md) | Section 4 TAPTN+LM vs GNN | reprint recorded cells; rescore LM `.pred` | ~1 MB | 92 GB |
 
 Do not point all three `TAPTN_ASSETS` variables at the same folder. Do not mix scoring protocols.
 
@@ -37,67 +37,67 @@ If `TAPTN_ASSETS` is unset, each `reproduce.py` looks for a **sibling** `*_repro
 
 ## Paper tables → package
 
-`--table` follows the camera-ready `\label{...}` (the ICL package also accepts the name without a `tab:` prefix).
+PDF numbers follow the TMLR 2026 camera-ready. `--table` is the CLI flag (kept as a short alias for the historical TeX label; the ICL package also accepts a `tab:` prefix).
 
-### Section 2 / appendix: rewiring (`TAPTN_rewiring_repro`)
+### Section 2 and Appendices G–H: rewiring (`TAPTN_rewiring_repro`)
 
-| Paper label | `--table` | Contents |
+| PDF | `--table` | Contents |
 |---|---|---|
-| `tb_1` | `tb_1` | Homophily of WebKB and citation graphs (citation-graph cells are recorded paper values; those graphs are not shipped) |
-| `tb_2` | `tb_2` | 7 models × 4 WebKB × flipping / extreme |
-| `tb_3` | `tb_3` | GPT-3.5 + step-by-step instructions, flipping (Cornell / Texas pickles only; Washington / Wisconsin missing) |
-| `tab:rewiring_stats` | `rewiring_stats` | Capability–sensitivity regression |
-| `tab:nolabel_main` | `nolabel_main` | Label-free flipping, 7-model averages |
-| `tab:nolabel_stats` | `nolabel_stats` | Label-free capability–sensitivity |
-| `tab:current_rewire` | `current_rewire` | Four current-generation models, label-free flipping |
-| `tab:taptn_structcorrupt` | `taptn_structcorrupt` | TAPTN-internal edge-blind / flip Δ (dry-run only) |
+| Table 1 | `tb_1` | Homophily of WebKB and citation graphs (citation-graph cells are recorded paper values; those graphs are not shipped) |
+| Table 2 | `tb_2` | 7 models × 4 WebKB × flipping / extreme |
+| Table 3 | `tb_3` | GPT-3.5 + step-by-step instructions, flipping (Cornell / Texas pickles only; Washington / Wisconsin missing) |
+| Table 4 | `rewiring_stats` | Capability–sensitivity regression |
+| Table 5 | `nolabel_main` | Label-free flipping, 7-model averages |
+| Table 6 | `nolabel_stats` | Label-free capability–sensitivity |
+| Table 26 | `current_rewire` | Four current-generation models, label-free flipping |
+| Table 29 | `taptn_structcorrupt` | TAPTN-internal edge-blind / flip Δ (dry-run only) |
 
-Figures: `fig:hop1`, `fig:hop2`, appendix `fig:nolabel_*` are regenerated from pickles; `fig_1` and `fig:case` are copied camera-ready illustrations.
+Figures: Figure 2, Figure 3, and Appendix Figures 8–10 are regenerated from pickles; Figure 1 and Figure 4 are copied camera-ready illustrations.
 
 Rewiring numbers include the camera-ready errata. To compare against the unrevised PDF: `python reproduce.py dry --table all --rescore --paper-compat`.
 
-### TAPTN method chapter: zero-shot ICL (`TAPTN_icl_repro`)
+### Section 3: zero-shot ICL (`TAPTN_icl_repro`)
 
-| Paper label | `--table` | Contents |
+| PDF | `--table` | Contents |
 |---|---|---|
-| `tab:main_5_datasets` | `main_5_datasets` | 0-hop / GraphICL+SAT / TAPTN on five graphs |
-| `tab:factorial` | `factorial` | 2-hop SAT × instructions × aggregation |
-| `tab:product_70b` | `product_70b` | ogbn-products, 400 nodes, Llama-3.3-70B |
-| `tab:cost` | `cost` | tokens / OpenRouter $ / accuracy |
-| `tb_52` | `tb_52` | budget backbone (8B iter-1 + 70B refine) |
-| `tb_4` | `tb_4` | GraphICL self-reflection vs TAPTN |
-| `tab:decouple` | `decouple` | SAT × instructions, no aggregation |
-| `tab:current_channel` | `current_channel` | Texas structural channels, four models |
-| `tab:current_taptn` | `current_taptn` | 2-hop TAPTN vs GraphICL+SAT (Texas + Cora) |
+| Table 8 | `main_5_datasets` | 0-hop / GraphICL+SAT / TAPTN on five graphs |
+| Table 9 | `factorial` | 2-hop SAT × instructions × aggregation |
+| Table 10 | `product_70b` | ogbn-products, 400 nodes, Llama-3.3-70B |
+| Table 14 | `cost` | tokens / OpenRouter $ / accuracy |
+| Table 15 | `tb_52` | budget backbone (8B iter-1 + 70B refine) |
+| Table 18 | `tb_4` | GraphICL self-reflection vs TAPTN |
+| Table 19 | `decouple` | SAT × instructions, no aggregation |
+| Table 27 | `current_channel` | Texas structural channels, four models |
+| Table 28 | `current_taptn` | 2-hop TAPTN vs GraphICL+SAT (Texas + Cora) |
 
-Illustrations: `fig:taptn_overview` (`TAPTN_overview.pdf`), `fig_2` (`TAPTN_mp.pdf`). Cora 2-hop TAPTN gating: `python reproduce.py gate` (no LLM).
+Illustrations: Figure 5 (`TAPTN_overview.pdf`), Figure 6 (`TAPTN_mp.pdf`). Cora 2-hop TAPTN gating: `python reproduce.py gate` (no LLM).
 
 The full ogbn-products dump (~7 GB including `Amazon-3M.raw`) is **not** shipped. Dry-run of the three products tables uses the shipped pickles and `cost_probe/` JSON only.
 
-### Fine-tuning vs GNN (`TAPTN_finetune_repro`)
+### Section 4: fine-tuning vs GNN (`TAPTN_finetune_repro`)
 
-| Paper label | `--table` | Contents |
+| PDF | `--table` | Contents |
 |---|---|---|
-| `tab:gnn_summary` | `gnn_summary` | How many pipelines significantly exceed TAPTN+LM |
-| `tab:p5_transfer` | `p5_transfer` / `transfer` | TAPTN embeddings + frozen GNN (transferability counts) |
-| `tab:crosslm_encoder` | `crosslm_encoder` | DeBERTa vs RoBERTa |
-| `tb_6` | `tb_6` | Frozen TA+GNN, GraphICL+LM, TAPTN+LM (homophilic) |
-| `tab:heterophilic_full` | `heterophilic` | Frozen TA+GNN, TAPTN+LM (WebKB) |
-| `tab:joint_gnn` | `joint` | Jointly trained encoder+GNN |
-| `tab:roberta_full` | `roberta` | RoBERTa-base encoder |
+| Table 11 | `gnn_summary` | How many pipelines significantly exceed TAPTN+LM |
+| Table 12 | `p5_transfer` / `transfer` | TAPTN embeddings + frozen GNN (transferability counts) |
+| Table 13 | `crosslm_encoder` | DeBERTa vs RoBERTa |
+| Table 20 | `tb_6` | Frozen TA+GNN, GraphICL+LM, TAPTN+LM (homophilic) |
+| Table 21 | `heterophilic` | Frozen TA+GNN, TAPTN+LM (WebKB) |
+| Table 22 | `joint` | Jointly trained encoder+GNN |
+| Table 23 | `roberta` | RoBERTa-base encoder |
 
-Each cell is five runs (run 1–5), mean±std. **P5** in `tab:p5_transfer` is a *column* abbreviation, not a row name in the main comparison tables.
+Each cell is five runs (run 1–5), mean±std. **P5** in Table 12 is a *column* abbreviation, not a row name in the main comparison tables.
 
 ### Paper objects that are not dry-run cells
 
-| label | Note |
+| PDF | Note |
 |---|---|
-| `tab:notation` | TAPTN symbol table |
-| `alg:taptn` | Pseudocode in the tex |
-| `tb_10a` | Dataset sizes and splits (descriptive) |
-| `tb_7a` / `tb_8a` | GNN architectures and training hyperparameters |
-| `tb_worked_nbr` | Neighbourhood summary for the appendix worked example |
-| `fig_3a` | `GNNPipe.pdf` pipeline illustration (not in the fine-tune asset bundle) |
+| Table 7 | TAPTN symbol table |
+| Algorithm 1 | Pseudocode in the paper |
+| Table 16 | Dataset sizes and splits (descriptive) |
+| Tables 24 / 25 | GNN architectures and training hyperparameters |
+| Table 17 | Neighbourhood summary for the appendix worked example |
+| Figure 7 | `GNNPipe.pdf` pipeline illustration (not in the fine-tune asset bundle) |
 
 ## Environment
 
@@ -147,7 +147,7 @@ Per-cell diffs and missing artifacts: each package’s `results/DISCREPANCIES.md
 
 ## Live re-run
 
-See each package README for commands and limits. `tab:taptn_structcorrupt` is dry-run only. A live products re-run needs the official OGB dump.
+See each package README for commands and limits. Table 29 is dry-run only. A live products re-run needs the official OGB dump.
 
 ## Citation
 

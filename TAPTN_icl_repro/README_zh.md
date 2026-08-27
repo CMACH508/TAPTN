@@ -9,14 +9,14 @@
 
 English: [README.md](README.md).
 
-本包覆盖 TAPTN 方法章节：五数据集主表、析因/解耦消融、自反思对照、ogbn-products 可扩展性/成本/预算骨干，以及新生代 Texas 结构通道与 Cora/Texas TAPTN 面板。
+本包覆盖第 3 节：五数据集主表、析因/解耦消融、自反思对照、ogbn-products 可扩展性/成本/预算骨干，以及新生代 Texas 结构通道与 Cora/Texas TAPTN 面板。
 
 论文级总览：[../README_zh.md](../README_zh.md)。
 
 **不在本包**
 
-- 第 2 节邻域重连，以及 TAPTN 内部 edge-blind/flip（`tab:taptn_structcorrupt`）→ [`TAPTN_rewiring_repro`](../TAPTN_rewiring_repro)
-- 微调 vs GNN 表 → [`TAPTN_finetune_repro`](../TAPTN_finetune_repro)
+- 第 2 节邻域重连，以及 TAPTN 内部 edge-blind/flip（表 29）→ [`TAPTN_rewiring_repro`](../TAPTN_rewiring_repro)
+- 第 4 节微调 vs GNN 表 → [`TAPTN_finetune_repro`](../TAPTN_finetune_repro)
 
 ## 环境
 
@@ -50,7 +50,7 @@ export TAPTN_ASSETS=/path/to/TAPTN_icl_repro_assets
 
 未设置时，`reproduce.py` 会查找同级 `TAPTN_icl_repro_assets/` 或 `./assets/`。
 
-ogbn-products（含 `Amazon-3M.raw` 约 7 GB）**未打包**。`tab:product_70b` / `tab:cost` / `tb_52` 的干运行只需要已随包的 pickle 与 `cost_probe/` JSON。若要实时重跑 products，需自行安装 OGB 官方数据。
+ogbn-products（含 `Amazon-3M.raw` 约 7 GB）**未打包**。表 10 / 14 / 15 的干运行只需要已随包的 pickle 与 `cost_probe/` JSON。若要实时重跑 products，需自行安装 OGB 官方数据。
 
 ## 一键干运行（不调用 LLM）
 
@@ -62,23 +62,23 @@ python reproduce.py dry --table all --rescore --figures
 bash run_dry.sh
 ```
 
-`dry` 打印相机就绪表格。`--rescore` 从保存的 pickle 重算每个格子（仍不调用 API）。`--figures` 把 `fig:taptn_overview` 与 `fig_2` 拷到 `output/figures/`。
+`dry` 打印相机就绪表格。`--rescore` 从保存的 pickle 重算每个格子（仍不调用 API）。`--figures` 把图 5 与图 6 拷到 `output/figures/`。
 
 ## 论文表格
 
-`--table` 使用相机就绪稿的 `\label{...}`（`tab:` 前缀可省略）：
+PDF 编号与 TMLR 2026 相机就绪稿一致。`--table` 是命令行参数（沿用历史 TeX label 的短别名；`tab:` 前缀可省略）：
 
-| `--table` | 论文 label | 内容 |
+| PDF | `--table` | 内容 |
 |---|---|---|
-| `main_5_datasets` | `tab:main_5_datasets` | 0-hop / GraphICL+SAT / TAPTN，五数据集 |
-| `factorial` | `tab:factorial` | 2-hop SAT × 指令 × 聚合 |
-| `product_70b` | `tab:product_70b` | ogbn-products，400 节点，Llama-3.3-70B |
-| `cost` | `tab:cost` | token / OpenRouter 费用 / 准确率 |
-| `tb_52` | `tb_52` | 预算骨干（8B 首轮 + 70B 精炼） |
-| `tb_4` | `tb_4` | GraphICL 自反思 vs TAPTN |
-| `decouple` | `tab:decouple` | SAT × 指令，无聚合 |
-| `current_channel` | `tab:current_channel` | Texas 结构通道，四模型 |
-| `current_taptn` | `tab:current_taptn` | 2-hop TAPTN vs GraphICL+SAT（Texas + Cora） |
+| 表 8 | `main_5_datasets` | 0-hop / GraphICL+SAT / TAPTN，五数据集 |
+| 表 9 | `factorial` | 2-hop SAT × 指令 × 聚合 |
+| 表 10 | `product_70b` | ogbn-products，400 节点，Llama-3.3-70B |
+| 表 14 | `cost` | token / OpenRouter 费用 / 准确率 |
+| 表 15 | `tb_52` | 预算骨干（8B 首轮 + 70B 精炼） |
+| 表 18 | `tb_4` | GraphICL 自反思 vs TAPTN |
+| 表 19 | `decouple` | SAT × 指令，无聚合 |
+| 表 27 | `current_channel` | Texas 结构通道，四模型 |
+| 表 28 | `current_taptn` | 2-hop TAPTN vs GraphICL+SAT（Texas + Cora） |
 
 计分协议**不能混用**：
 

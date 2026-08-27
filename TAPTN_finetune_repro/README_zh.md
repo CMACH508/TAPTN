@@ -55,17 +55,17 @@ python reproduce.py dry --table all --rescore-lm
 
 ## 论文表格
 
-`--table` 对应 camera-ready 的 `\label{...}`（或短别名），顺序与论文一致：
+PDF 编号与 TMLR 2026 相机就绪稿一致。`--table` 是命令行参数（沿用历史 TeX label 或短别名），顺序与论文一致：
 
-| `--table` | 论文 label | 内容 |
+| PDF | `--table` | 内容 |
 |---|---|---|
-| `gnn_summary` | `tab:gnn_summary` | 显著超过 TAPTN+LM 的流水线数量 |
-| `p5_transfer` / `transfer` | `tab:p5_transfer` | TAPTN 嵌入 + 冻结 GNN（可迁移性计数） |
-| `crosslm_encoder` | `tab:crosslm_encoder` | DeBERTa vs RoBERTa |
-| `tb_6` | `tb_6` | 冻结 TA+GNN、GraphICL+LM、TAPTN+LM（同配图） |
-| `heterophilic` | `tab:heterophilic_full` | 冻结 TA+GNN、TAPTN+LM（WebKB） |
-| `joint` | `tab:joint_gnn` | 编码器与 GNN 联合训练 |
-| `roberta` | `tab:roberta_full` | RoBERTa-base 编码器 |
+| 表 11 | `gnn_summary` | 显著超过 TAPTN+LM 的流水线数量 |
+| 表 12 | `p5_transfer` / `transfer` | TAPTN 嵌入 + 冻结 GNN（可迁移性计数） |
+| 表 13 | `crosslm_encoder` | DeBERTa vs RoBERTa |
+| 表 20 | `tb_6` | 冻结 TA+GNN、GraphICL+LM、TAPTN+LM（同配图） |
+| 表 21 | `heterophilic` | 冻结 TA+GNN、TAPTN+LM（WebKB） |
+| 表 22 | `joint` | 编码器与 GNN 联合训练 |
+| 表 23 | `roberta` | RoBERTa-base 编码器 |
 
 ```bash
 python reproduce.py dry --table gnn_summary
@@ -77,7 +77,7 @@ python reproduce.py dry --table joint
 python reproduce.py dry --table roberta
 ```
 
-`tab:p5_transfer` 的 caption 把 **P5** 定义为该表的**列缩写**：把 TAPTN 增强文本（而非原始文本）送给与 TA+GNN 相同的冻结 GNN。它不是主对照表中的行名（主表行是 TA+LM、GraphICL+LM、TAPTN+LM、TA+GNN、Joint）。
+表 12 的 caption 把 **P5** 定义为该表的**列缩写**：把 TAPTN 增强文本（而非原始文本）送给与 TA+GNN 相同的冻结 GNN。它不是主对照表中的行名（主表行是 TA+LM、GraphICL+LM、TAPTN+LM、TA+GNN、Joint）。
 
 ## 训练
 

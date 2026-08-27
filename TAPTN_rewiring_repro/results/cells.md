@@ -2,13 +2,13 @@
 
 Numbers below are the **revised** TMLR 2026 camera-ready entries. Dry-run `--rescore` compares pickle-derived values against these; remaining gaps are in `DISCREPANCIES.md`. Use `--paper-compat` to compare against the unrevised PDF.
 
-## `tb_1` Homophily
+## Table 1 — Homophily
 
 | Dataset | Cornell | Texas | Washington | Wisconsin | ogbn-arxiv | Pubmed | Cora |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | Homophily | 0.1308 | 0.1448 | 0.1599 | 0.1869 | 0.6358 | 0.7924 | 0.8252 |
 
-## `tb_2` Label-revealing flipping / extreme (%)
+## Table 2 — Label-revealing flipping / extreme (%)
 
 \(O_F,R_F\): original / flipped. \(O_E,R_E\): original / extreme. \(\Delta = R - O\).
 
@@ -43,7 +43,7 @@ Numbers below are the **revised** TMLR 2026 camera-ready entries. Dry-run `--res
 | | | Washington | 69.55 | 62.03 | 77.07 | 74.06 | -7.52 | -3.01 |
 | | | Wisconsin | 74.45 | 60.44 | 81.93 | 78.19 | -14.01 | -3.74 |
 
-## `tb_3` GPT-3.5 + instructions, flipping (%)
+## Table 3 — GPT-3.5 + instructions, flipping (%)
 
 | Dataset | Original | Rewired | Δ |
 |---|---:|---:|---:|
@@ -52,7 +52,7 @@ Numbers below are the **revised** TMLR 2026 camera-ready entries. Dry-run `--res
 | Wisconsin | 50.96 | 49.04 | -1.92 |
 | Texas | 54.55 | 49.80 | -4.75 |
 
-## `tab:rewiring_stats`
+## Table 4
 
 Sensitivity \(S = O - R\). Slopes per 100 LMArena points.
 
@@ -65,7 +65,7 @@ Sensitivity \(S = O - R\). Slopes per 100 LMArena points.
 | Orig Acc | Pearson \(r\) (\(p\)) | +0.8999 (0.0058) | +0.6422 (0.1199) |
 | Rewired Acc | Pearson \(r\) (\(p\)) | +0.8414 (0.0176) | +0.5858 (0.1669) |
 
-## `tab:nolabel_main` (%)
+## Table 5 (%)
 
 \(\Delta = \bar R - \bar O\).
 
@@ -80,7 +80,7 @@ Sensitivity \(S = O - R\). Slopes per 100 LMArena points.
 | Llama-3.3-70B-Instruct | 1319 | 85.31 | 79.95 | -5.37 | -6.21 |
 | **Mean** | | 79.71 | 76.69 | -3.02 | -3.40 |
 
-## `tab:nolabel_stats`
+## Table 6
 
 | Target | Pearson \(r\) (\(p\)) | Spearman \(\rho\) (\(p\)) | \(R^2\) | Slope /100 |
 |---|---|---|---:|---:|
@@ -88,7 +88,7 @@ Sensitivity \(S = O - R\). Slopes per 100 LMArena points.
 | \(\bar O\) | +0.8880 (0.0076) | +0.8214 (0.0234) | 0.7886 | +0.1915 |
 | \(\bar R\) | +0.7081 (0.0750) | +0.7143 (0.0713) | 0.5014 | +0.0902 |
 
-## `tab:current_rewire` (%)
+## Table 26 (%)
 
 | Model | Arena | \(\bar O\) | \(\bar R\) | Δ (err. inc.) |
 |---|---:|---:|---:|---|
@@ -97,7 +97,7 @@ Sensitivity \(S = O - R\). Slopes per 100 LMArena points.
 | Gemma-4-31B-it | 1451 | 96.55 | 94.67 | −1.88 (+55%) |
 | GLM-5.1 | 1475 | 95.17 | 93.48 | −1.69 (+35%) |
 
-## `tab:taptn_structcorrupt` (Δ pp vs intact TAPTN)
+## Table 29 (Δ pp vs intact TAPTN)
 
 | Backbone | Dataset | Edge-blind Δ | Flipped Δ |
 |---|---|---:|---:|

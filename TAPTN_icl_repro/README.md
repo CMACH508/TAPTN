@@ -9,14 +9,14 @@ Code to reproduce the **zero-shot ICL / TAPTN** tables from
 
 中文说明：[README_zh.md](README_zh.md).
 
-This package covers the TAPTN method chapter: main five-dataset table, factorial and decouple ablations, self-reflection control, ogbn-products scalability / cost / budget-backbone, and the current-generation Texas channel + Cora/Texas TAPTN panels.
+This package covers Section 3: main five-dataset table, factorial and decouple ablations, self-reflection control, ogbn-products scalability / cost / budget-backbone, and the current-generation Texas channel + Cora/Texas TAPTN panels.
 
 Paper-level index: [../README.md](../README.md).
 
 **Not in this bundle**
 
-- Neighborhood rewiring (Section 2) and TAPTN-internal edge-blind/flip (`tab:taptn_structcorrupt`) → [`TAPTN_rewiring_repro`](../TAPTN_rewiring_repro)
-- Fine-tuning vs GNN tables → [`TAPTN_finetune_repro`](../TAPTN_finetune_repro)
+- Neighborhood rewiring (Section 2) and TAPTN-internal edge-blind/flip (Table 29) → [`TAPTN_rewiring_repro`](../TAPTN_rewiring_repro)
+- Fine-tuning vs GNN tables (Section 4) → [`TAPTN_finetune_repro`](../TAPTN_finetune_repro)
 
 ## Setup
 
@@ -50,7 +50,7 @@ export TAPTN_ASSETS=/path/to/TAPTN_icl_repro_assets
 
 If `TAPTN_ASSETS` is unset, `reproduce.py` looks for a sibling `TAPTN_icl_repro_assets/` directory or `./assets/`.
 
-ogbn-products (~7 GB including `Amazon-3M.raw`) is **not** shipped. Dry-run of `tab:product_70b` / `tab:cost` / `tb_52` only needs the shipped pickles and `cost_probe/` JSON. A live products re-run requires the official OGB dump.
+ogbn-products (~7 GB including `Amazon-3M.raw`) is **not** shipped. Dry-run of Tables 10 / 14 / 15 only needs the shipped pickles and `cost_probe/` JSON. A live products re-run requires the official OGB dump.
 
 ## Quick start (no LLM calls)
 
@@ -62,23 +62,23 @@ python reproduce.py dry --table all --rescore --figures
 bash run_dry.sh
 ```
 
-`dry` reprints the camera-ready tables. `--rescore` recomputes every cell from the saved pickles (still no GPU / no API). `--figures` copies `fig:taptn_overview` and `fig_2` under `output/figures/`.
+`dry` reprints the camera-ready tables. `--rescore` recomputes every cell from the saved pickles (still no GPU / no API). `--figures` copies Figure 5 and Figure 6 under `output/figures/`.
 
 ## Paper tables
 
-`--table` follows the camera-ready `\label{...}` (the `tab:` prefix is optional):
+PDF numbers follow the TMLR 2026 camera-ready. `--table` is the CLI flag (historical TeX-label alias; a `tab:` prefix is optional):
 
-| `--table` | Paper label | Contents |
+| PDF | `--table` | Contents |
 |---|---|---|
-| `main_5_datasets` | `tab:main_5_datasets` | 0-hop / GraphICL+SAT / TAPTN on five graphs |
-| `factorial` | `tab:factorial` | 2-hop SAT × instructions × aggregation |
-| `product_70b` | `tab:product_70b` | ogbn-products, 400 nodes, Llama-3.3-70B |
-| `cost` | `tab:cost` | tokens / OpenRouter $ / accuracy |
-| `tb_52` | `tb_52` | budget backbone (8B iter-1 + 70B refine) |
-| `tb_4` | `tb_4` | GraphICL self-reflection vs TAPTN |
-| `decouple` | `tab:decouple` | SAT × instructions, no aggregation |
-| `current_channel` | `tab:current_channel` | Texas structural channels, four models |
-| `current_taptn` | `tab:current_taptn` | 2-hop TAPTN vs GraphICL+SAT (Texas + Cora) |
+| Table 8 | `main_5_datasets` | 0-hop / GraphICL+SAT / TAPTN on five graphs |
+| Table 9 | `factorial` | 2-hop SAT × instructions × aggregation |
+| Table 10 | `product_70b` | ogbn-products, 400 nodes, Llama-3.3-70B |
+| Table 14 | `cost` | tokens / OpenRouter $ / accuracy |
+| Table 15 | `tb_52` | budget backbone (8B iter-1 + 70B refine) |
+| Table 18 | `tb_4` | GraphICL self-reflection vs TAPTN |
+| Table 19 | `decouple` | SAT × instructions, no aggregation |
+| Table 27 | `current_channel` | Texas structural channels, four models |
+| Table 28 | `current_taptn` | 2-hop TAPTN vs GraphICL+SAT (Texas + Cora) |
 
 ```bash
 python reproduce.py dry --table main_5_datasets --rescore

@@ -12,7 +12,7 @@ Re-score from pickles (cells with no artifact print as —):
 python reproduce.py dry --table all --rescore
 ```
 
-## `tab:main_5_datasets`
+## Table 8
 
 | Method | Cora | arXiv-2023 | Texas | Wisconsin | Cornell |
 |---|---:|---:|---:|---:|---:|
@@ -22,7 +22,7 @@ python reproduce.py dry --table all --rescore
 | TAPTN 1-hop | 72.69 | 87.30 | 89.84 | 85.67 | 85.08 |
 | TAPTN 2-hop | 73.80 | 88.57 | 91.80 | 87.23 | 86.69 |
 
-## `tab:factorial`
+## Table 9
 
 | Method | Cora | arXiv-2023 | Texas | Wisconsin | Cornell | Avg. |
 |---|---:|---:|---:|---:|---:|---:|
@@ -31,7 +31,7 @@ python reproduce.py dry --table all --rescore
 | + iterative aggregation (no instr.) | 70.85 | 87.30 | 66.79 | 73.21 | 77.82 | 75.19 |
 | TAPTN (instr. + aggr.) | 73.80 | 88.57 | 91.80 | 87.23 | 86.69 | 85.62 |
 
-## `tab:product_70b`
+## Table 10
 
 | Method | Accuracy (%) |
 |---|---:|
@@ -40,7 +40,7 @@ python reproduce.py dry --table all --rescore
 | TAPTN 1-hop | 83.75 |
 | TAPTN 2-hop | 86.75 |
 
-## `tab:cost`
+## Table 14
 
 | Method | Reason calls/node | Tokens/node | Cost ($/1k) | Acc. (%) |
 |---|---:|---:|---:|---:|
@@ -48,7 +48,7 @@ python reproduce.py dry --table all --rescore
 | GraphICL+SAT 2-hop (dense nbhd.) | 1.0 | ≈8.1k | 0.91 | 76.75 |
 | TAPTN 2-hop (uniform 70B) | 4.6 | ≈22k | 2.52 | 86.75 |
 
-## `tb_52`
+## Table 15
 
 | Method | Hop | w/o instruction (%) | w/ instruction (%) |
 |---|---:|---:|---:|
@@ -57,7 +57,7 @@ python reproduce.py dry --table all --rescore
 | TAPTN | 1 | 74.75 | 74.75 |
 |  | 2 | 74.00 | 76.75 |
 
-## `tb_4`
+## Table 18
 
 | Method | Order | RI | Cora | arXiv-2023 |
 |---|---:|---:|---:|---:|
@@ -70,7 +70,7 @@ python reproduce.py dry --table all --rescore
 | TAPTN | 1 | / | 72.69 | 87.30 |
 |  | 2 | / | 73.80 | 88.57 |
 
-## `tab:decouple`
+## Table 19
 
 | Dataset | Hop | w/o Struct, w/o Instr. | w/o Struct, w/ Instr. | w/ Struct, w/o Instr. | w/ Struct, w/ Instr. |
 |---|---|---:|---:|---:|---:|
@@ -85,7 +85,7 @@ python reproduce.py dry --table all --rescore
 | Cornell | 1-hop | 56.45 | 76.61 | 76.21 | 85.08 |
 |  | 2-hop | 62.10 | 76.61 | 72.18 | 81.45 |
 
-## `tab:current_channel`
+## Table 27
 
 | Model | ego 0-hop | GraphICL 1-hop anon. | GraphICL+SAT 1-hop | TAPTN 1-hop |
 |---|---:|---:|---:|---:|
@@ -94,7 +94,7 @@ python reproduce.py dry --table all --rescore
 | Qwen3.5-27B | 68.75 | 69.92 | 92.19 | 94.92 |
 | GLM-5.1 | 83.59 | 92.97 | 94.53 | 96.09 |
 
-## `tab:current_taptn`
+## Table 28
 
 | Dataset | Model | GraphICL+SAT (2-hop) | TAPTN (2-hop) | Δ |
 |---|---|---:|---:|---:|

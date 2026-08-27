@@ -9,7 +9,7 @@ Code to reproduce the **neighborhood-rewiring** tables and figures from
 
 中文说明：[README_zh.md](README_zh.md).
 
-This package covers Section 2 (flipping / extreme rewiring, capability–sensitivity statistics, label-free control) plus the current-generation label-free extension and the TAPTN-internal structural-channel ablation.
+This package covers Section 2 (flipping / extreme rewiring, capability–sensitivity statistics, label-free control) plus Appendix G–H (current-generation label-free extension and the TAPTN-internal structural-channel ablation).
 
 Paper-level index: [../README.md](../README.md). The other two chapter packages are siblings: [`TAPTN_icl_repro`](../TAPTN_icl_repro), [`TAPTN_finetune_repro`](../TAPTN_finetune_repro).
 
@@ -55,24 +55,24 @@ python reproduce.py dry --table all --rescore --paper-compat
 bash run_dry.sh
 ```
 
-`dry` reprints the **revised** camera-ready tables. `--rescore` recomputes every cell from the saved pickles (still no GPU / no API). `--figures` writes plots under `output/figures/`. `--paper-compat` compares against the *unrevised* PDF (pre-errata cells, including the 42.04 Wisconsin label-free GPT-3.5 original). Camera-ready illustrations (`fig_1`, `fig:case`, `former_rewire2.pdf`) are copied as-is; scatter/heatmap panels are regenerated from the pickles and will not be pixel-identical to the PDF.
+`dry` reprints the **revised** camera-ready tables. `--rescore` recomputes every cell from the saved pickles (still no GPU / no API). `--figures` writes plots under `output/figures/`. `--paper-compat` compares against the *unrevised* PDF (pre-errata cells, including the 42.04 Wisconsin label-free GPT-3.5 original). Camera-ready illustrations (Figure 1, Figure 4, Figure 11 / `former_rewire2.pdf`) are copied as-is; scatter/heatmap panels are regenerated from the pickles and will not be pixel-identical to the PDF.
 
 ## Paper tables
 
-`--table` follows the camera-ready `\label{...}`:
+PDF numbers follow the TMLR 2026 camera-ready. `--table` is the CLI flag (historical TeX-label alias).
 
-| `--table` | Paper label | Contents |
+| PDF | `--table` | Contents |
 |---|---|---|
-| `tb_1` | `tb_1` | Homophily of WebKB and citation graphs |
-| `tb_2` | `tb_2` | 7 models × 4 WebKB × flipping / extreme |
-| `tb_3` | `tb_3` | GPT-3.5-Turbo-0125 + step-by-step instructions, flipping |
-| `rewiring_stats` | `tab:rewiring_stats` | Capability–sensitivity regression |
-| `nolabel_main` | `tab:nolabel_main` | Label-free flipping, 7-model averages |
-| `nolabel_stats` | `tab:nolabel_stats` | Label-free capability–sensitivity |
-| `current_rewire` | `tab:current_rewire` | Four current-generation models, label-free flipping |
-| `taptn_structcorrupt` | `tab:taptn_structcorrupt` | TAPTN-internal edge-blind / flip Δ |
+| Table 1 | `tb_1` | Homophily of WebKB and citation graphs |
+| Table 2 | `tb_2` | 7 models × 4 WebKB × flipping / extreme |
+| Table 3 | `tb_3` | GPT-3.5-Turbo-0125 + step-by-step instructions, flipping |
+| Table 4 | `rewiring_stats` | Capability–sensitivity regression |
+| Table 5 | `nolabel_main` | Label-free flipping, 7-model averages |
+| Table 6 | `nolabel_stats` | Label-free capability–sensitivity |
+| Table 26 | `current_rewire` | Four current-generation models, label-free flipping |
+| Table 29 | `taptn_structcorrupt` | TAPTN-internal edge-blind / flip Δ |
 
-Figures: `fig:hop1`, `fig:hop2`, appendix `fig:nolabel_*`, plus static `fig_1` / `fig:case`.
+Figures: Figure 2, Figure 3, Appendix Figures 8–10, plus static Figure 1 / Figure 4.
 
 ```bash
 python reproduce.py dry --table tb_2 --rescore
@@ -93,7 +93,7 @@ python reproduce.py run --table tb_2 --hop 1 --model phi-4 --dataset cornell --r
 # Table 2 extreme (hop 2)
 python reproduce.py run --table tb_2 --hop 2 --model phi-4 --dataset texas --rewired
 
-# Label-free control (also used for tab:current_rewire)
+# Label-free control (also used for Table 26)
 python reproduce.py run --table nolabel --model llama-3.3-70b-instruct --dataset wisconsin --rewired
 
 # Table 3 (instructions on)
@@ -102,11 +102,11 @@ python reproduce.py run --table tb_3 --dataset cornell
 
 Outputs are written under `output/rerun/` (override with `--output-dir`). Live jobs are stochastic; they will not bit-match the saved pickles.
 
-`tab:taptn_structcorrupt` is dry-run only in this bundle (complete TAPTN iteration-2 pipeline).
+Table 29 is dry-run only in this bundle (complete TAPTN iteration-2 pipeline).
 
 ## Scoring
 
-Section-2 open-model pickles store a `results` list aligned to the unshuffled `test_mask`. Accuracy skips `None` entries and matches labels with the same multi-stage rule as `analyze_rewiring_lmarena.py`.
+Section 2 open-model pickles store a `results` list aligned to the unshuffled `test_mask`. Accuracy skips `None` entries and matches labels with the same multi-stage rule as `analyze_rewiring_lmarena.py`.
 
 GPT-3.5 Table 2 uses the original notebooks’ `wrong_index` / `result` convention (legacy filenames under `pkls/gpt35/`). Table 3 uses the same rule on `pkls/tb3/`.
 

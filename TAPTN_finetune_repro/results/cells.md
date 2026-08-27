@@ -9,7 +9,7 @@ The library RNG seed for run *k* on each dataset is listed in `configs/run_seeds
 Names follow the paper: TA+LM, GraphICL+LM, TAPTN+LM, TA+GNN (frozen), Joint, and TAPTN embeddings + frozen GNN (transferability).
 GraphICL+LM is DeBERTa fine-tuned on GraphICL-style auxiliary neighbourhood text (not TAPTN). WebKB tables have no GraphICL+LM row.
 
-## Table tb_6 — Frozen TA+GNN / GraphICL+LM / TAPTN+LM (homophilic, DeBERTa)
+## Table 20 — Frozen TA+GNN / GraphICL+LM / TAPTN+LM (homophilic, DeBERTa)
 
 | Encoder | Pipeline | Method | Dataset | Run1 | Run2 | Run3 | Run4 | Run5 | Recorded | Paper |
 |---|---|---|---|---:|---:|---:|---:|---:|---|---|
@@ -65,7 +65,7 @@ GraphICL+LM is DeBERTa fine-tuned on GraphICL-style auxiliary neighbourhood text
 | deberta | TAPTN+LM | TAPTN+LM | arXiv-2023 | 94.22 | 94.80 | 92.77 | 93.35 | 92.77 | 93.58±0.90 | 93.81±0.70 |
 | deberta | TAPTN+LM | TAPTN+LM | ogbn-products | 87.50 | 87.50 | 90.00 | 93.75 | 88.75 | 89.50±2.59 | 89.50±2.59 |
 
-## Table heterophilic — Frozen TA+GNN / TAPTN+LM (WebKB, DeBERTa; no GraphICL+LM)
+## Table 21 — Frozen TA+GNN / TAPTN+LM (WebKB, DeBERTa; no GraphICL+LM)
 
 | Encoder | Pipeline | Method | Dataset | Run1 | Run2 | Run3 | Run4 | Run5 | Recorded | Paper |
 |---|---|---|---|---:|---:|---:|---:|---:|---|---|
@@ -118,7 +118,7 @@ GraphICL+LM is DeBERTa fine-tuned on GraphICL-style auxiliary neighbourhood text
 | deberta | TAPTN+LM | TAPTN+LM | Wisconsin | 86.15 | 87.69 | 87.69 | 83.08 | 90.77 | 87.08±2.79 | 87.08±2.79 |
 | deberta | TAPTN+LM | TAPTN+LM | Cornell | 98.00 | 100.00 | 98.00 | 100.00 | 100.00 | 99.20±1.10 | 99.20±1.10 |
 
-## Table joint — Jointly trained encoder+GNN (DeBERTa)
+## Table 22 — Jointly trained encoder+GNN (DeBERTa)
 
 | Encoder | Pipeline | Method | Dataset | Run1 | Run2 | Run3 | Run4 | Run5 | Recorded | Paper |
 |---|---|---|---|---:|---:|---:|---:|---:|---|---|
@@ -195,7 +195,7 @@ GraphICL+LM is DeBERTa fine-tuned on GraphICL-style auxiliary neighbourhood text
 | deberta | Joint encoder+GNN | GraphTARIF | Wisconsin | 90.77 | 92.31 | 84.62 | 92.31 | 81.54 | 88.31±4.94 | 88.31±4.94 |
 | deberta | Joint encoder+GNN | GraphTARIF | Cornell | 92.00 | 84.00 | 96.00 | 74.00 | 88.00 | 86.80±8.44 | 86.80±8.44 |
 
-## Table roberta — RoBERTa-base TA+LM / TA+GNN / TAPTN+LM
+## Table 23 — RoBERTa-base TA+LM / TA+GNN / TAPTN+LM
 
 | Encoder | Pipeline | Method | Dataset | Run1 | Run2 | Run3 | Run4 | Run5 | Recorded | Paper |
 |---|---|---|---|---:|---:|---:|---:|---:|---|---|
@@ -284,7 +284,7 @@ GraphICL+LM is DeBERTa fine-tuned on GraphICL-style auxiliary neighbourhood text
 | roberta | TAPTN+LM | TAPTN+LM | Texas | 100.00 | 98.08 | 96.15 | 98.08 | 98.08 | 98.08±1.36 | 98.08±1.36 |
 | roberta | TAPTN+LM | TAPTN+LM | Wisconsin | 86.15 | 89.23 | 86.15 | 84.62 | 92.31 | 87.69±3.08 | 87.69±3.08 |
 
-## Transferability — TAPTN embeddings + frozen GNN (DeBERTa)
+## Table 12 — TAPTN embeddings + frozen GNN (DeBERTa)
 
 | Encoder | Pipeline | Method | Dataset | Run1 | Run2 | Run3 | Run4 | Run5 | Recorded | Paper |
 |---|---|---|---|---:|---:|---:|---:|---:|---|---|

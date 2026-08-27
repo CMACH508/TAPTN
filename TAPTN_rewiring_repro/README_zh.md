@@ -9,7 +9,7 @@
 
 English: [README.md](README.md).
 
-本包覆盖第 2 节（翻转/极端重连、能力–敏感性回归、无标签对照）、附录中的新生代无标签重连，以及 TAPTN 内部结构通道消融。
+本包覆盖第 2 节（翻转/极端重连、能力–敏感性回归、无标签对照）以及附录 G–H（新生代无标签重连、TAPTN 内部结构通道消融）。
 
 论文级总览：[../README_zh.md](../README_zh.md)。另外两章是同级目录：[`TAPTN_icl_repro`](../TAPTN_icl_repro)、[`TAPTN_finetune_repro`](../TAPTN_finetune_repro)。
 
@@ -55,24 +55,24 @@ python reproduce.py dry --table all --rescore --paper-compat
 bash run_dry.sh
 ```
 
-`dry` 打印**修订后**的相机就绪表格。`--rescore` 从保存的 pickle 重算每个格子（仍不调用 API）。`--figures` 把图写到 `output/figures/`。`--paper-compat` 对照修订前 PDF（含无标签 GPT-3.5 Wisconsin 原始 42.04）。示意图（`fig_1`、`fig:case`、`former_rewire2.pdf`）按论文原件拷贝；散点/热力图由 pickle 重新绘制，与 PDF 像素不必一致。
+`dry` 打印**修订后**的相机就绪表格。`--rescore` 从保存的 pickle 重算每个格子（仍不调用 API）。`--figures` 把图写到 `output/figures/`。`--paper-compat` 对照修订前 PDF（含无标签 GPT-3.5 Wisconsin 原始 42.04）。示意图（图 1、图 4、图 11 / `former_rewire2.pdf`）按论文原件拷贝；散点/热力图由 pickle 重新绘制，与 PDF 像素不必一致。
 
 ## 论文表格
 
-`--table` 使用相机就绪稿的 `\label{...}`：
+PDF 编号与 TMLR 2026 相机就绪稿一致。`--table` 是命令行参数（沿用历史 TeX label 的短别名）。
 
-| `--table` | 论文 label | 内容 |
+| PDF | `--table` | 内容 |
 |---|---|---|
-| `tb_1` | `tb_1` | WebKB 与引文图同质性 |
-| `tb_2` | `tb_2` | 7 模型 × 4 WebKB × 翻转 / 极端 |
-| `tb_3` | `tb_3` | GPT-3.5-Turbo-0125 + 逐步指令，仅翻转 |
-| `rewiring_stats` | `tab:rewiring_stats` | 能力–敏感性回归 |
-| `nolabel_main` | `tab:nolabel_main` | 无标签翻转，7 模型平均 |
-| `nolabel_stats` | `tab:nolabel_stats` | 无标签能力–敏感性 |
-| `current_rewire` | `tab:current_rewire` | 四个新生代模型的无标签翻转 |
-| `taptn_structcorrupt` | `tab:taptn_structcorrupt` | TAPTN 内部去边 / 翻转 Δ |
+| 表 1 | `tb_1` | WebKB 与引文图同质性 |
+| 表 2 | `tb_2` | 7 模型 × 4 WebKB × 翻转 / 极端 |
+| 表 3 | `tb_3` | GPT-3.5-Turbo-0125 + 逐步指令，仅翻转 |
+| 表 4 | `rewiring_stats` | 能力–敏感性回归 |
+| 表 5 | `nolabel_main` | 无标签翻转，7 模型平均 |
+| 表 6 | `nolabel_stats` | 无标签能力–敏感性 |
+| 表 26 | `current_rewire` | 四个新生代模型的无标签翻转 |
+| 表 29 | `taptn_structcorrupt` | TAPTN 内部去边 / 翻转 Δ |
 
-配图：`fig:hop1`、`fig:hop2`、附录 `fig:nolabel_*`，以及静态 `fig_1` / `fig:case`。
+配图：图 2、图 3、附录图 8–10，以及静态图 1 / 图 4。
 
 ## 实时重跑（LLM API）
 
@@ -90,11 +90,11 @@ python reproduce.py run --table tb_3 --dataset cornell
 
 结果写到 `output/rerun/`（可用 `--output-dir` 覆盖）。实时推理有随机性，不会与保存的 pickle 逐字节一致。
 
-`tab:taptn_structcorrupt` 在本包中仅支持干运行（完整 TAPTN 第二轮管线不在此包）。
+表 29 在本包中仅支持干运行（完整 TAPTN 第二轮管线不在此包）。
 
 ## 计分约定
 
-Section-2 开源模型 pickle 的 `results` 列表与未打乱的 `test_mask` 对齐；跳过 `None`，匹配规则与 `analyze_rewiring_lmarena.py` 相同。
+第 2 节开源模型 pickle 的 `results` 列表与未打乱的 `test_mask` 对齐；跳过 `None`，匹配规则与 `analyze_rewiring_lmarena.py` 相同。
 
 GPT-3.5 的 Table 2 使用当年笔记中的 `wrong_index` / `result` 约定（`pkls/gpt35/` 下的旧文件名）。Table 3 对 `pkls/tb3/` 使用同一规则。
 

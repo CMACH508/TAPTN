@@ -55,17 +55,17 @@ python reproduce.py dry --table all --rescore-lm
 
 ## Paper tables
 
-`--table` follows the camera-ready `\label{...}` (or a short alias). Flags are listed in paper order:
+PDF numbers follow the TMLR 2026 camera-ready. `--table` is the CLI flag (historical TeX-label alias or a short name). Flags are listed in paper order:
 
-| `--table` | Paper label | Contents |
+| PDF | `--table` | Contents |
 |---|---|---|
-| `gnn_summary` | `tab:gnn_summary` | How many pipelines significantly exceed TAPTN+LM |
-| `p5_transfer` / `transfer` | `tab:p5_transfer` | TAPTN embeddings + frozen GNN (transferability counts) |
-| `crosslm_encoder` | `tab:crosslm_encoder` | DeBERTa vs RoBERTa |
-| `tb_6` | `tb_6` | Frozen TA+GNN, GraphICL+LM, TAPTN+LM (homophilic) |
-| `heterophilic` | `tab:heterophilic_full` | Frozen TA+GNN, TAPTN+LM (WebKB) |
-| `joint` | `tab:joint_gnn` | Jointly trained encoder+GNN |
-| `roberta` | `tab:roberta_full` | RoBERTa-base encoder |
+| Table 11 | `gnn_summary` | How many pipelines significantly exceed TAPTN+LM |
+| Table 12 | `p5_transfer` / `transfer` | TAPTN embeddings + frozen GNN (transferability counts) |
+| Table 13 | `crosslm_encoder` | DeBERTa vs RoBERTa |
+| Table 20 | `tb_6` | Frozen TA+GNN, GraphICL+LM, TAPTN+LM (homophilic) |
+| Table 21 | `heterophilic` | Frozen TA+GNN, TAPTN+LM (WebKB) |
+| Table 22 | `joint` | Jointly trained encoder+GNN |
+| Table 23 | `roberta` | RoBERTa-base encoder |
 
 ```bash
 python reproduce.py dry --table gnn_summary
@@ -77,7 +77,7 @@ python reproduce.py dry --table joint
 python reproduce.py dry --table roberta
 ```
 
-The caption of `tab:p5_transfer` defines **P5** as a *column* abbreviation: TAPTN-enriched text fed to the same frozen GNN as TA+GNN. It is not a row name in the main comparison tables.
+The caption of Table 12 defines **P5** as a *column* abbreviation: TAPTN-enriched text fed to the same frozen GNN as TA+GNN. It is not a row name in the main comparison tables.
 
 ## Training
 
