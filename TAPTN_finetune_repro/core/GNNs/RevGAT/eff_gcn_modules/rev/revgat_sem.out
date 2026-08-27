@@ -1,0 +1,273 @@
+Loading pretrained LM features (title and abstract) ...
+LM_emb_path: prt_lm/cora/microsoft/deberta-base-seed0.emb
+
+Number of parameters: 895118
+Start running train at 07-22 06:17:29
+/TAPE-main/core/GNNs/RevGAT/eff_gcn_modules/rev/gcn_revop.py:66: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  inputs[0].storage().resize_(0)
+Epoch: 0, Time: 0.4264, Loss: 3.7488, TrainAcc: 0.1521, ValAcc: 0.1661, ES: 00/50 | BestVal=0.1661@E0
+Epoch: 10, Time: 0.0788, Loss: 0.4675, TrainAcc: 0.8639, ValAcc: 0.8764, ES: 01/50 | BestVal=0.8782@E9
+Epoch: 20, Time: 0.0754, Loss: 0.2583, TrainAcc: 0.9224, ValAcc: 0.8616, ES: 11/50 | BestVal=0.8782@E9
+Epoch: 30, Time: 0.0768, Loss: 0.1415, TrainAcc: 0.9501, ValAcc: 0.8524, ES: 21/50 | BestVal=0.8782@E9
+Epoch: 40, Time: 0.0701, Loss: 0.1091, TrainAcc: 0.9649, ValAcc: 0.8561, ES: 31/50 | BestVal=0.8782@E9
+Epoch: 50, Time: 0.0696, Loss: 0.0847, TrainAcc: 0.9717, ValAcc: 0.8469, ES: 41/50 | BestVal=0.8782@E9
+Early stopped, loading model from epoch-9
+Finished running train at 07-22 06:17:34, running time = 4.95s.
+[RevGAT + TA] ValAcc: 0.8782, TestAcc: 0.8782
+
+Loading top-k prediction features ...
+Loading topk preds from gpt_preds/cora.csv
+
+Number of parameters: 797582
+Start running train at 07-22 06:17:42
+Epoch: 0, Time: 0.0968, Loss: 3.5685, TrainAcc: 0.1115, ValAcc: 0.1421, ES: 00/50 | BestVal=0.1421@E0
+Epoch: 10, Time: 0.0898, Loss: 1.2301, TrainAcc: 0.6404, ValAcc: 0.7546, ES: 00/50 | BestVal=0.7546@E10
+Epoch: 20, Time: 0.0884, Loss: 0.9545, TrainAcc: 0.7143, ValAcc: 0.7786, ES: 00/50 | BestVal=0.7786@E20
+Epoch: 30, Time: 0.0878, Loss: 0.7886, TrainAcc: 0.7518, ValAcc: 0.7915, ES: 00/50 | BestVal=0.7915@E30
+Epoch: 40, Time: 0.0758, Loss: 0.6813, TrainAcc: 0.7740, ValAcc: 0.7878, ES: 04/50 | BestVal=0.7934@E36
+Epoch: 50, Time: 0.0698, Loss: 0.6008, TrainAcc: 0.7900, ValAcc: 0.7841, ES: 02/50 | BestVal=0.8044@E48
+Epoch: 60, Time: 0.0795, Loss: 0.5623, TrainAcc: 0.7999, ValAcc: 0.8100, ES: 00/50 | BestVal=0.8100@E60
+Epoch: 70, Time: 0.0750, Loss: 0.5789, TrainAcc: 0.8023, ValAcc: 0.8100, ES: 07/50 | BestVal=0.8155@E63
+Epoch: 80, Time: 0.0692, Loss: 0.5291, TrainAcc: 0.8054, ValAcc: 0.8044, ES: 17/50 | BestVal=0.8155@E63
+Epoch: 90, Time: 0.0792, Loss: 0.5274, TrainAcc: 0.8103, ValAcc: 0.8173, ES: 06/50 | BestVal=0.8247@E84
+Epoch: 100, Time: 0.0690, Loss: 0.4802, TrainAcc: 0.8208, ValAcc: 0.8284, ES: 02/50 | BestVal=0.8321@E98
+Epoch: 110, Time: 0.0815, Loss: 0.4717, TrainAcc: 0.8300, ValAcc: 0.8358, ES: 00/50 | BestVal=0.8358@E110
+Epoch: 120, Time: 0.0707, Loss: 0.4369, TrainAcc: 0.8454, ValAcc: 0.8229, ES: 07/50 | BestVal=0.8450@E113
+Epoch: 130, Time: 0.0694, Loss: 0.4649, TrainAcc: 0.8448, ValAcc: 0.8118, ES: 17/50 | BestVal=0.8450@E113
+Epoch: 140, Time: 0.0770, Loss: 0.4006, TrainAcc: 0.8522, ValAcc: 0.8284, ES: 27/50 | BestVal=0.8450@E113
+Epoch: 150, Time: 0.0688, Loss: 0.4661, TrainAcc: 0.8313, ValAcc: 0.8266, ES: 37/50 | BestVal=0.8450@E113
+Epoch: 160, Time: 0.0769, Loss: 0.3771, TrainAcc: 0.8670, ValAcc: 0.8339, ES: 47/50 | BestVal=0.8450@E113
+Early stopped, loading model from epoch-113
+Finished running train at 07-22 06:17:55, running time = 12.59s.
+[RevGAT + P] ValAcc: 0.8450, TestAcc: 0.7970
+
+Loading pretrained LM features (explanations) ...
+LM_emb_path: prt_lm/cora2/microsoft/deberta-base-seed0.emb
+
+Number of parameters: 895118
+Start running train at 07-22 06:18:03
+Epoch: 0, Time: 0.0969, Loss: 3.6084, TrainAcc: 0.1336, ValAcc: 0.1292, ES: 00/50 | BestVal=0.1292@E0
+Epoch: 10, Time: 0.0818, Loss: 0.6487, TrainAcc: 0.8362, ValAcc: 0.8487, ES: 00/50 | BestVal=0.8487@E10
+Epoch: 20, Time: 0.0702, Loss: 0.4540, TrainAcc: 0.8799, ValAcc: 0.8653, ES: 03/50 | BestVal=0.8672@E17
+Epoch: 30, Time: 0.0799, Loss: 0.3093, TrainAcc: 0.9083, ValAcc: 0.8690, ES: 00/50 | BestVal=0.8690@E30
+Epoch: 40, Time: 0.0758, Loss: 0.2519, TrainAcc: 0.9187, ValAcc: 0.8579, ES: 06/50 | BestVal=0.8690@E34
+Epoch: 50, Time: 0.0717, Loss: 0.2205, TrainAcc: 0.9341, ValAcc: 0.8616, ES: 16/50 | BestVal=0.8690@E34
+Epoch: 60, Time: 0.0695, Loss: 0.2004, TrainAcc: 0.9397, ValAcc: 0.8616, ES: 26/50 | BestVal=0.8690@E34
+Epoch: 70, Time: 0.0684, Loss: 0.1470, TrainAcc: 0.9526, ValAcc: 0.8561, ES: 36/50 | BestVal=0.8690@E34
+Epoch: 80, Time: 0.0691, Loss: 0.1222, TrainAcc: 0.9594, ValAcc: 0.8469, ES: 46/50 | BestVal=0.8690@E34
+Early stopped, loading model from epoch-34
+Finished running train at 07-22 06:18:09, running time = 6.37s.
+[RevGAT + E] ValAcc: 0.8690, TestAcc: 0.8598
+
+(TA_P_E) ValAcc: 0.8893, TestAcc: 0.8819
+
+Loading pretrained LM features (title and abstract) ...
+LM_emb_path: prt_lm/cora/microsoft/deberta-base-seed1.emb
+
+Number of parameters: 895118
+Start running train at 07-22 06:18:26
+Epoch: 0, Time: 0.1078, Loss: 3.4685, TrainAcc: 0.1527, ValAcc: 0.3635, ES: 00/50 | BestVal=0.3635@E0
+Epoch: 10, Time: 0.0859, Loss: 0.4949, TrainAcc: 0.8615, ValAcc: 0.8635, ES: 00/50 | BestVal=0.8635@E10
+Epoch: 20, Time: 0.0695, Loss: 0.2978, TrainAcc: 0.9169, ValAcc: 0.8506, ES: 10/50 | BestVal=0.8635@E10
+Epoch: 30, Time: 0.0690, Loss: 0.2211, TrainAcc: 0.9366, ValAcc: 0.8506, ES: 20/50 | BestVal=0.8635@E10
+Epoch: 40, Time: 0.0780, Loss: 0.1513, TrainAcc: 0.9526, ValAcc: 0.8561, ES: 04/50 | BestVal=0.8653@E36
+Epoch: 50, Time: 0.0757, Loss: 0.1469, TrainAcc: 0.9532, ValAcc: 0.8561, ES: 01/50 | BestVal=0.8653@E49
+Epoch: 60, Time: 0.0719, Loss: 0.0949, TrainAcc: 0.9680, ValAcc: 0.8487, ES: 11/50 | BestVal=0.8653@E49
+Epoch: 70, Time: 0.0740, Loss: 0.0733, TrainAcc: 0.9778, ValAcc: 0.8432, ES: 21/50 | BestVal=0.8653@E49
+Epoch: 80, Time: 0.0705, Loss: 0.0672, TrainAcc: 0.9723, ValAcc: 0.8506, ES: 31/50 | BestVal=0.8653@E49
+Epoch: 90, Time: 0.0757, Loss: 0.0561, TrainAcc: 0.9815, ValAcc: 0.8506, ES: 41/50 | BestVal=0.8653@E49
+Early stopped, loading model from epoch-49
+Finished running train at 07-22 06:18:34, running time = 7.56s.
+[RevGAT + TA] ValAcc: 0.8653, TestAcc: 0.8432
+
+Loading top-k prediction features ...
+Loading topk preds from gpt_preds/cora.csv
+
+Number of parameters: 797582
+Start running train at 07-22 06:18:42
+Epoch: 0, Time: 0.0948, Loss: 3.1933, TrainAcc: 0.1687, ValAcc: 0.1919, ES: 00/50 | BestVal=0.1919@E0
+Epoch: 10, Time: 0.0909, Loss: 1.3137, TrainAcc: 0.6275, ValAcc: 0.7528, ES: 00/50 | BestVal=0.7528@E10
+Epoch: 20, Time: 0.0914, Loss: 0.9505, TrainAcc: 0.7167, ValAcc: 0.7823, ES: 00/50 | BestVal=0.7823@E20
+Epoch: 30, Time: 0.0809, Loss: 0.7469, TrainAcc: 0.7568, ValAcc: 0.7897, ES: 02/50 | BestVal=0.7952@E28
+Epoch: 40, Time: 0.0870, Loss: 0.7402, TrainAcc: 0.7752, ValAcc: 0.7970, ES: 06/50 | BestVal=0.8026@E34
+Epoch: 50, Time: 0.0707, Loss: 0.6047, TrainAcc: 0.7913, ValAcc: 0.8007, ES: 05/50 | BestVal=0.8026@E45
+Epoch: 60, Time: 0.0742, Loss: 0.6039, TrainAcc: 0.7765, ValAcc: 0.8026, ES: 05/50 | BestVal=0.8118@E55
+Epoch: 70, Time: 0.0806, Loss: 0.5903, TrainAcc: 0.7931, ValAcc: 0.8118, ES: 00/50 | BestVal=0.8118@E70
+Epoch: 80, Time: 0.0746, Loss: 0.5316, TrainAcc: 0.8147, ValAcc: 0.8081, ES: 01/50 | BestVal=0.8137@E79
+Epoch: 90, Time: 0.0891, Loss: 0.5075, TrainAcc: 0.8196, ValAcc: 0.8210, ES: 00/50 | BestVal=0.8210@E90
+Epoch: 100, Time: 0.0970, Loss: 0.4793, TrainAcc: 0.8288, ValAcc: 0.8210, ES: 00/50 | BestVal=0.8210@E100
+Epoch: 110, Time: 0.0694, Loss: 0.4517, TrainAcc: 0.8344, ValAcc: 0.8192, ES: 09/50 | BestVal=0.8247@E101
+Epoch: 120, Time: 0.0826, Loss: 0.4427, TrainAcc: 0.8454, ValAcc: 0.8192, ES: 05/50 | BestVal=0.8358@E115
+Epoch: 130, Time: 0.0699, Loss: 0.4339, TrainAcc: 0.8448, ValAcc: 0.8284, ES: 15/50 | BestVal=0.8358@E115
+Epoch: 140, Time: 0.0735, Loss: 0.4156, TrainAcc: 0.8565, ValAcc: 0.8026, ES: 25/50 | BestVal=0.8358@E115
+Epoch: 150, Time: 0.0702, Loss: 0.4344, TrainAcc: 0.8473, ValAcc: 0.8229, ES: 35/50 | BestVal=0.8358@E115
+Epoch: 160, Time: 0.0702, Loss: 0.3893, TrainAcc: 0.8590, ValAcc: 0.8229, ES: 05/50 | BestVal=0.8395@E155
+Epoch: 170, Time: 0.0695, Loss: 0.4276, TrainAcc: 0.8485, ValAcc: 0.8247, ES: 07/50 | BestVal=0.8395@E163
+Epoch: 180, Time: 0.0701, Loss: 0.3832, TrainAcc: 0.8670, ValAcc: 0.8247, ES: 17/50 | BestVal=0.8395@E163
+Epoch: 190, Time: 0.0693, Loss: 0.3979, TrainAcc: 0.8584, ValAcc: 0.8247, ES: 27/50 | BestVal=0.8395@E163
+Finished running train at 07-22 06:18:57, running time = 15.38s.
+[RevGAT + P] ValAcc: 0.8395, TestAcc: 0.8229
+
+Loading pretrained LM features (explanations) ...
+LM_emb_path: prt_lm/cora2/microsoft/deberta-base-seed1.emb
+
+Number of parameters: 895118
+Start running train at 07-22 06:19:06
+Epoch: 0, Time: 0.0890, Loss: 3.5992, TrainAcc: 0.1718, ValAcc: 0.4539, ES: 00/50 | BestVal=0.4539@E0
+Epoch: 10, Time: 0.0789, Loss: 0.6905, TrainAcc: 0.8264, ValAcc: 0.8266, ES: 03/50 | BestVal=0.8284@E7
+Epoch: 20, Time: 0.0837, Loss: 0.5402, TrainAcc: 0.8522, ValAcc: 0.8432, ES: 01/50 | BestVal=0.8487@E19
+Epoch: 30, Time: 0.0819, Loss: 0.4425, TrainAcc: 0.8713, ValAcc: 0.8524, ES: 02/50 | BestVal=0.8561@E28
+Epoch: 40, Time: 0.0768, Loss: 0.4181, TrainAcc: 0.8762, ValAcc: 0.8524, ES: 01/50 | BestVal=0.8635@E39
+Epoch: 50, Time: 0.0718, Loss: 0.3806, TrainAcc: 0.8818, ValAcc: 0.8487, ES: 11/50 | BestVal=0.8635@E39
+Epoch: 60, Time: 0.0696, Loss: 0.2932, TrainAcc: 0.9027, ValAcc: 0.8561, ES: 21/50 | BestVal=0.8635@E39
+Epoch: 70, Time: 0.0800, Loss: 0.2628, TrainAcc: 0.9181, ValAcc: 0.8653, ES: 00/50 | BestVal=0.8653@E70
+Epoch: 80, Time: 0.0722, Loss: 0.2524, TrainAcc: 0.9169, ValAcc: 0.8598, ES: 10/50 | BestVal=0.8653@E70
+Epoch: 90, Time: 0.0785, Loss: 0.2344, TrainAcc: 0.9156, ValAcc: 0.8598, ES: 20/50 | BestVal=0.8653@E70
+Epoch: 100, Time: 0.0690, Loss: 0.2308, TrainAcc: 0.9249, ValAcc: 0.8598, ES: 06/50 | BestVal=0.8690@E94
+Epoch: 110, Time: 0.0811, Loss: 0.2072, TrainAcc: 0.9323, ValAcc: 0.8653, ES: 16/50 | BestVal=0.8690@E94
+Epoch: 120, Time: 0.0702, Loss: 0.1799, TrainAcc: 0.9390, ValAcc: 0.8598, ES: 26/50 | BestVal=0.8690@E94
+Epoch: 130, Time: 0.0739, Loss: 0.1656, TrainAcc: 0.9489, ValAcc: 0.8542, ES: 36/50 | BestVal=0.8690@E94
+Epoch: 140, Time: 0.0691, Loss: 0.1592, TrainAcc: 0.9495, ValAcc: 0.8579, ES: 46/50 | BestVal=0.8690@E94
+Early stopped, loading model from epoch-94
+Finished running train at 07-22 06:19:17, running time = 10.93s.
+[RevGAT + E] ValAcc: 0.8690, TestAcc: 0.8303
+
+(TA_P_E) ValAcc: 0.8967, TestAcc: 0.8911
+
+Loading pretrained LM features (title and abstract) ...
+LM_emb_path: prt_lm/cora/microsoft/deberta-base-seed2.emb
+
+Number of parameters: 895118
+Start running train at 07-22 06:19:33
+Epoch: 0, Time: 0.0915, Loss: 3.9645, TrainAcc: 0.1078, ValAcc: 0.0369, ES: 00/50 | BestVal=0.0369@E0
+Epoch: 10, Time: 0.0995, Loss: 0.4966, TrainAcc: 0.8584, ValAcc: 0.8893, ES: 00/50 | BestVal=0.8893@E10
+Epoch: 20, Time: 0.0843, Loss: 0.2167, TrainAcc: 0.9353, ValAcc: 0.8801, ES: 10/50 | BestVal=0.8893@E10
+Epoch: 30, Time: 0.0768, Loss: 0.1614, TrainAcc: 0.9520, ValAcc: 0.8819, ES: 20/50 | BestVal=0.8893@E10
+Epoch: 40, Time: 0.0712, Loss: 0.1289, TrainAcc: 0.9631, ValAcc: 0.8782, ES: 30/50 | BestVal=0.8893@E10
+Epoch: 50, Time: 0.0700, Loss: 0.0741, TrainAcc: 0.9754, ValAcc: 0.8690, ES: 40/50 | BestVal=0.8893@E10
+Early stopped, loading model from epoch-10
+Finished running train at 07-22 06:19:38, running time = 4.78s.
+[RevGAT + TA] ValAcc: 0.8893, TestAcc: 0.8524
+
+Loading top-k prediction features ...
+Loading topk preds from gpt_preds/cora.csv
+
+Number of parameters: 797582
+Start running train at 07-22 06:19:46
+Epoch: 0, Time: 0.0883, Loss: 3.2655, TrainAcc: 0.1429, ValAcc: 0.1494, ES: 00/50 | BestVal=0.1494@E0
+Epoch: 10, Time: 0.0940, Loss: 1.3196, TrainAcc: 0.6238, ValAcc: 0.7417, ES: 00/50 | BestVal=0.7417@E10
+Epoch: 20, Time: 0.0849, Loss: 0.8620, TrainAcc: 0.7315, ValAcc: 0.7712, ES: 02/50 | BestVal=0.7768@E18
+Epoch: 30, Time: 0.0784, Loss: 0.7453, TrainAcc: 0.7500, ValAcc: 0.7878, ES: 02/50 | BestVal=0.7952@E28
+Epoch: 40, Time: 0.0810, Loss: 0.6859, TrainAcc: 0.7672, ValAcc: 0.7860, ES: 05/50 | BestVal=0.7970@E35
+Epoch: 50, Time: 0.0698, Loss: 0.7207, TrainAcc: 0.7999, ValAcc: 0.7934, ES: 15/50 | BestVal=0.7970@E35
+Epoch: 60, Time: 0.0716, Loss: 0.6069, TrainAcc: 0.8042, ValAcc: 0.7915, ES: 03/50 | BestVal=0.8044@E57
+Epoch: 70, Time: 0.0806, Loss: 0.6046, TrainAcc: 0.7869, ValAcc: 0.7952, ES: 02/50 | BestVal=0.8100@E68
+Epoch: 80, Time: 0.0774, Loss: 0.5231, TrainAcc: 0.8140, ValAcc: 0.7970, ES: 09/50 | BestVal=0.8118@E71
+Epoch: 90, Time: 0.0696, Loss: 0.5233, TrainAcc: 0.8103, ValAcc: 0.7970, ES: 03/50 | BestVal=0.8118@E87
+Epoch: 100, Time: 0.0693, Loss: 0.4832, TrainAcc: 0.8362, ValAcc: 0.8100, ES: 04/50 | BestVal=0.8118@E96
+Epoch: 110, Time: 0.0762, Loss: 0.4810, TrainAcc: 0.8307, ValAcc: 0.8063, ES: 01/50 | BestVal=0.8192@E109
+Epoch: 120, Time: 0.0698, Loss: 0.4420, TrainAcc: 0.8430, ValAcc: 0.8137, ES: 11/50 | BestVal=0.8192@E109
+Epoch: 130, Time: 0.0749, Loss: 0.4637, TrainAcc: 0.8344, ValAcc: 0.8173, ES: 06/50 | BestVal=0.8266@E124
+Epoch: 140, Time: 0.0695, Loss: 0.4671, TrainAcc: 0.8331, ValAcc: 0.8173, ES: 16/50 | BestVal=0.8266@E124
+Epoch: 150, Time: 0.0847, Loss: 0.4423, TrainAcc: 0.8387, ValAcc: 0.8173, ES: 26/50 | BestVal=0.8266@E124
+Epoch: 160, Time: 0.0699, Loss: 0.4110, TrainAcc: 0.8541, ValAcc: 0.8229, ES: 03/50 | BestVal=0.8284@E157
+Epoch: 170, Time: 0.0799, Loss: 0.4852, TrainAcc: 0.8294, ValAcc: 0.8192, ES: 13/50 | BestVal=0.8284@E157
+Epoch: 180, Time: 0.0704, Loss: 0.4312, TrainAcc: 0.8436, ValAcc: 0.8081, ES: 23/50 | BestVal=0.8284@E157
+Epoch: 190, Time: 0.0820, Loss: 0.3746, TrainAcc: 0.8676, ValAcc: 0.8266, ES: 33/50 | BestVal=0.8284@E157
+Finished running train at 07-22 06:20:02, running time = 15.67s.
+[RevGAT + P] ValAcc: 0.8339, TestAcc: 0.8137
+
+Loading pretrained LM features (explanations) ...
+LM_emb_path: prt_lm/cora2/microsoft/deberta-base-seed2.emb
+
+Number of parameters: 895118
+Start running train at 07-22 06:20:10
+Epoch: 0, Time: 0.0879, Loss: 3.8395, TrainAcc: 0.1090, ValAcc: 0.0609, ES: 00/50 | BestVal=0.0609@E0
+Epoch: 10, Time: 0.0898, Loss: 0.6466, TrainAcc: 0.8257, ValAcc: 0.8653, ES: 00/50 | BestVal=0.8653@E10
+Epoch: 20, Time: 0.0852, Loss: 0.4105, TrainAcc: 0.8824, ValAcc: 0.8561, ES: 07/50 | BestVal=0.8690@E13
+Epoch: 30, Time: 0.0798, Loss: 0.3095, TrainAcc: 0.9126, ValAcc: 0.8616, ES: 17/50 | BestVal=0.8690@E13
+Epoch: 40, Time: 0.0695, Loss: 0.2709, TrainAcc: 0.9230, ValAcc: 0.8432, ES: 27/50 | BestVal=0.8690@E13
+Epoch: 50, Time: 0.0688, Loss: 0.2529, TrainAcc: 0.9150, ValAcc: 0.8524, ES: 37/50 | BestVal=0.8690@E13
+Epoch: 60, Time: 0.0696, Loss: 0.1673, TrainAcc: 0.9458, ValAcc: 0.8469, ES: 47/50 | BestVal=0.8690@E13
+Early stopped, loading model from epoch-13
+Finished running train at 07-22 06:20:15, running time = 5.09s.
+[RevGAT + E] ValAcc: 0.8690, TestAcc: 0.8210
+
+(TA_P_E) ValAcc: 0.8930, TestAcc: 0.8708
+
+Loading pretrained LM features (title and abstract) ...
+LM_emb_path: prt_lm/cora/microsoft/deberta-base-seed3.emb
+
+Number of parameters: 895118
+Start running train at 07-22 06:20:32
+Epoch: 0, Time: 0.0960, Loss: 4.2736, TrainAcc: 0.0856, ValAcc: 0.1568, ES: 00/50 | BestVal=0.1568@E0
+Epoch: 10, Time: 0.0906, Loss: 0.5491, TrainAcc: 0.8498, ValAcc: 0.8284, ES: 00/50 | BestVal=0.8284@E10
+Epoch: 20, Time: 0.0806, Loss: 0.3638, TrainAcc: 0.8990, ValAcc: 0.8339, ES: 01/50 | BestVal=0.8432@E19
+Epoch: 30, Time: 0.0858, Loss: 0.2536, TrainAcc: 0.9243, ValAcc: 0.8469, ES: 00/50 | BestVal=0.8469@E30
+Epoch: 40, Time: 0.0798, Loss: 0.1660, TrainAcc: 0.9452, ValAcc: 0.8395, ES: 10/50 | BestVal=0.8469@E30
+Epoch: 50, Time: 0.0739, Loss: 0.1238, TrainAcc: 0.9606, ValAcc: 0.8321, ES: 20/50 | BestVal=0.8469@E30
+Epoch: 60, Time: 0.0749, Loss: 0.1287, TrainAcc: 0.9594, ValAcc: 0.8358, ES: 30/50 | BestVal=0.8469@E30
+Epoch: 70, Time: 0.0689, Loss: 0.1080, TrainAcc: 0.9606, ValAcc: 0.8303, ES: 40/50 | BestVal=0.8469@E30
+Early stopped, loading model from epoch-30
+Finished running train at 07-22 06:20:38, running time = 6.48s.
+[RevGAT + TA] ValAcc: 0.8469, TestAcc: 0.8653
+
+Loading top-k prediction features ...
+Loading topk preds from gpt_preds/cora.csv
+
+Number of parameters: 797582
+Start running train at 07-22 06:20:47
+Epoch: 0, Time: 0.0967, Loss: 3.0525, TrainAcc: 0.1743, ValAcc: 0.1144, ES: 00/50 | BestVal=0.1144@E0
+Epoch: 10, Time: 0.0904, Loss: 1.2479, TrainAcc: 0.6459, ValAcc: 0.7122, ES: 00/50 | BestVal=0.7122@E10
+Epoch: 20, Time: 0.0848, Loss: 0.9353, TrainAcc: 0.7365, ValAcc: 0.7325, ES: 02/50 | BestVal=0.7362@E18
+Epoch: 30, Time: 0.0796, Loss: 0.7574, TrainAcc: 0.7635, ValAcc: 0.7362, ES: 02/50 | BestVal=0.7417@E28
+Epoch: 40, Time: 0.0750, Loss: 0.6759, TrainAcc: 0.7648, ValAcc: 0.7417, ES: 05/50 | BestVal=0.7435@E35
+Epoch: 50, Time: 0.0769, Loss: 0.6362, TrainAcc: 0.7494, ValAcc: 0.7380, ES: 03/50 | BestVal=0.7620@E47
+Epoch: 60, Time: 0.0698, Loss: 0.6273, TrainAcc: 0.7894, ValAcc: 0.7601, ES: 09/50 | BestVal=0.7657@E51
+Epoch: 70, Time: 0.0933, Loss: 0.5390, TrainAcc: 0.8103, ValAcc: 0.7731, ES: 00/50 | BestVal=0.7731@E70
+Epoch: 80, Time: 0.0765, Loss: 0.5234, TrainAcc: 0.8245, ValAcc: 0.7749, ES: 02/50 | BestVal=0.7823@E78
+Epoch: 90, Time: 0.0720, Loss: 0.5321, TrainAcc: 0.8202, ValAcc: 0.7749, ES: 08/50 | BestVal=0.7823@E82
+Epoch: 100, Time: 0.0704, Loss: 0.4956, TrainAcc: 0.8177, ValAcc: 0.7712, ES: 05/50 | BestVal=0.7841@E95
+Epoch: 110, Time: 0.0712, Loss: 0.4408, TrainAcc: 0.8424, ValAcc: 0.7841, ES: 04/50 | BestVal=0.7878@E106
+Epoch: 120, Time: 0.0787, Loss: 0.4395, TrainAcc: 0.8417, ValAcc: 0.7768, ES: 04/50 | BestVal=0.7878@E116
+Epoch: 130, Time: 0.0795, Loss: 0.4389, TrainAcc: 0.8479, ValAcc: 0.7804, ES: 09/50 | BestVal=0.7897@E121
+Epoch: 140, Time: 0.0819, Loss: 0.4189, TrainAcc: 0.8534, ValAcc: 0.7657, ES: 19/50 | BestVal=0.7897@E121
+Epoch: 150, Time: 0.0723, Loss: 0.4086, TrainAcc: 0.8615, ValAcc: 0.7749, ES: 09/50 | BestVal=0.7934@E141
+Epoch: 160, Time: 0.0758, Loss: 0.4140, TrainAcc: 0.8547, ValAcc: 0.7731, ES: 05/50 | BestVal=0.7952@E155
+Epoch: 170, Time: 0.0694, Loss: 0.3676, TrainAcc: 0.8664, ValAcc: 0.7860, ES: 15/50 | BestVal=0.7952@E155
+Epoch: 180, Time: 0.0751, Loss: 0.4209, TrainAcc: 0.8534, ValAcc: 0.7878, ES: 25/50 | BestVal=0.7952@E155
+Epoch: 190, Time: 0.0748, Loss: 0.4025, TrainAcc: 0.8571, ValAcc: 0.7860, ES: 35/50 | BestVal=0.7952@E155
+Finished running train at 07-22 06:21:03, running time = 15.87s.
+[RevGAT + P] ValAcc: 0.8026, TestAcc: 0.8542
+
+Loading pretrained LM features (explanations) ...
+LM_emb_path: prt_lm/cora2/microsoft/deberta-base-seed3.emb
+
+Number of parameters: 895118
+Start running train at 07-22 06:21:11
+Epoch: 0, Time: 0.0936, Loss: 4.0616, TrainAcc: 0.1176, ValAcc: 0.1624, ES: 00/50 | BestVal=0.1624@E0
+Epoch: 10, Time: 0.0906, Loss: 0.6312, TrainAcc: 0.8362, ValAcc: 0.8229, ES: 00/50 | BestVal=0.8229@E10
+Epoch: 20, Time: 0.0796, Loss: 0.5012, TrainAcc: 0.8818, ValAcc: 0.8247, ES: 06/50 | BestVal=0.8284@E14
+Epoch: 30, Time: 0.0692, Loss: 0.3682, TrainAcc: 0.8879, ValAcc: 0.8266, ES: 05/50 | BestVal=0.8303@E25
+Epoch: 40, Time: 0.0716, Loss: 0.2794, TrainAcc: 0.9132, ValAcc: 0.8247, ES: 03/50 | BestVal=0.8303@E37
+Epoch: 50, Time: 0.0835, Loss: 0.3089, TrainAcc: 0.9089, ValAcc: 0.8173, ES: 03/50 | BestVal=0.8303@E47
+Epoch: 60, Time: 0.0766, Loss: 0.2221, TrainAcc: 0.9267, ValAcc: 0.8284, ES: 05/50 | BestVal=0.8303@E55
+Epoch: 70, Time: 0.0688, Loss: 0.1728, TrainAcc: 0.9384, ValAcc: 0.8266, ES: 15/50 | BestVal=0.8303@E55
+Epoch: 80, Time: 0.0690, Loss: 0.1650, TrainAcc: 0.9483, ValAcc: 0.8247, ES: 25/50 | BestVal=0.8303@E55
+Epoch: 90, Time: 0.0773, Loss: 0.1564, TrainAcc: 0.9464, ValAcc: 0.8229, ES: 35/50 | BestVal=0.8303@E55
+Epoch: 100, Time: 0.0806, Loss: 0.1345, TrainAcc: 0.9538, ValAcc: 0.8229, ES: 04/50 | BestVal=0.8303@E96
+Epoch: 110, Time: 0.0709, Loss: 0.1082, TrainAcc: 0.9643, ValAcc: 0.8192, ES: 14/50 | BestVal=0.8303@E96
+Epoch: 120, Time: 0.0689, Loss: 0.1066, TrainAcc: 0.9661, ValAcc: 0.8192, ES: 24/50 | BestVal=0.8303@E96
+Epoch: 130, Time: 0.0785, Loss: 0.1106, TrainAcc: 0.9618, ValAcc: 0.8173, ES: 34/50 | BestVal=0.8303@E96
+Epoch: 140, Time: 0.0701, Loss: 0.0919, TrainAcc: 0.9686, ValAcc: 0.8210, ES: 44/50 | BestVal=0.8303@E96
+Early stopped, loading model from epoch-96
+Finished running train at 07-22 06:21:22, running time = 11.27s.
+[RevGAT + E] ValAcc: 0.8303, TestAcc: 0.8561
+
+(TA_P_E) ValAcc: 0.8561, TestAcc: 0.8967
+
+[TA] ValACC: 0.8699 ± 0.0182, TestAcc: 0.8598 ± 0.0153
+[P] ValACC: 0.8303 ± 0.0190, TestAcc: 0.8220 ± 0.0240
+[E] ValACC: 0.8593 ± 0.0194, TestAcc: 0.8418 ± 0.0191
+[ensemble] ValACC: 0.8838 ± 0.0187, TestAcc: 0.8851 ± 0.0113
+Running time: 62.64s

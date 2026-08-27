@@ -1,0 +1,18 @@
+# Asset bundles are distributed separately (see README). Do not commit them.
+TAPTN_rewiring_repro_assets/
+TAPTN_icl_repro_assets/
+TAPTN_finetune_repro_assets/
+
+# Author-machine copy helper; contains historical API-key strings used as sanitizer needles.
+TAPTN_icl_repro/scripts_author_copy.py
+
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+**/output/
+.env
+.env.*
+*.pt
+*.ckpt
+.DS_Store

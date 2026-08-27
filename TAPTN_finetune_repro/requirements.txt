@@ -1,0 +1,12 @@
+torch>=2.0
+torch-geometric>=2.3
+transformers>=4.30
+yacs
+numpy
+scipy
+scikit-learn
+pandas
+ogb
+dgl
+pytz
+pyyaml

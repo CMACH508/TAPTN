@@ -1,0 +1,9 @@
+# Map public run index (1–5) to the RNG seed used by the training library.
+# Pass --run N on the command line; this file is applied automatically.
+run_seeds:
+  cora:        [1, 2, 3, 6, 9]
+  arxiv_2023:  [1, 2, 5, 9, 10]
+  product:     [2, 3, 4, 8, 10]
+  cornell:     [1, 2, 4, 5, 9]
+  texas:       [1, 3, 4, 7, 10]
+  wisconsin:   [2, 3, 4, 7, 10]
