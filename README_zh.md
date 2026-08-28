@@ -4,7 +4,7 @@
 > **LLMs Can Leverage Graph Structural Information in Text-Attributed Graphs**.
 > *Transactions on Machine Learning Research*, 2026.
 > [OpenReview](https://openreview.net/forum?id=WhaVqEkkMY)
-> · [Code](https://github.com/CMACH508/LLMsCanLeverageGraphStructure)
+> · [Code](https://github.com/CMACH508/TAPTN)
 
 English: [README.md](README.md).
 
